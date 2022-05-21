@@ -1,12 +1,14 @@
 <template>
-  <div class="flex flex-col h-screen prose prose-light dark:prose-invert">
-    <header class="flex-1 p4 h4 font-mono teal300">
+  <div
+    class="flex flex-col h-screen w-screen font-sans text-light dark:prose-invert"
+  >
+    <header class="flex-0 p4 h4">
       <slot name="header"> Header </slot>
     </header>
-    <main class="flex-grow font-sans">
+    <main class="flex-grow p4 items-start">
       <slot />
     </main>
-    <footer class="p4 h10 fw300 font-sans">
+    <footer class="flex-0 p4 h10">
       <slot name="footer"> Footer </slot>
     </footer>
   </div>
