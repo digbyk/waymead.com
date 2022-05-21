@@ -2,6 +2,11 @@
   <div
     class="flex flex-col h-screen w-screen font-sans text-light dark:prose-invert"
   >
+    <Head>
+      <Title>Title</Title>
+      <Meta name="description" content="Description" />
+      <Style type="text/css" children="body { background-color: green; }" />
+    </Head>
     <header class="flex-0 p4 h4">
       <slot name="header"> Header </slot>
     </header>
@@ -13,6 +18,24 @@
     </footer>
   </div>
 </template>
+
+<script setup>
+useHead({
+  titleTemplate: "My App - %s",
+  // or, instead:
+  // titleTemplate: (title) => `My App - ${title}`,
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+  charset: "utf-8",
+  meta: [{ name: "description", content: "My amazing site." }],
+  bodyAttrs: {
+    class: "test",
+  },
+});
+definePageMeta({
+  layout: false,
+  title: "Some Page",
+});
+</script>
 
 <style>
 :root {
