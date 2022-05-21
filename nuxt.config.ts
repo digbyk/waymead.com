@@ -4,7 +4,8 @@ import { defineNuxtConfig } from "nuxt";
 export default defineNuxtConfig({
   modules: ["@unocss/nuxt"],
   publicRuntimeConfig: {
-    myPublicVariable: process.env.PUBLIC_VARIABLE,
+    graphcmsEndpoint: process.env.GRAPHCMS_ENDPOINT,
+    graphcmsApiKey: process.env.GRAPHCMS_API_KEY,
   },
   privateRuntimeConfig: {
     myPrivateToken: process.env.PRIVATE_TOKEN,
