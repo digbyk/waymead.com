@@ -9,7 +9,11 @@ import { GraphQLClient } from "graphql-request";
 export default defineNuxtPlugin((nuxtApp) => {
   return {
     provide: {
-      graphcmsClient: new GraphQLClient(nuxtApp.$config.graphcmsEndpoint),
+      graphcmsClient: new GraphQLClient(nuxtApp.$config.graphcmsEndpoint, {
+        headers: {
+          authorization: `Bearer ${nuxtApp.$config.graphcmsApiKey}`,
+        },
+      }),
     },
   };
 });
