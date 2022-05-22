@@ -1,15 +1,26 @@
 <template>
   <NuxtLayout name="default">
-    <template #header> Some header template content. </template>
-    <template #footer> Some footer template content. </template>
-    <h1>The heading</h1>
-    <p>The rest of the page.</p>
-    <p>Endpoint {{ $config.graphcmsEndpoint }}.</p>
-    <p>API key {{ $config.graphcmsApiKey }}.</p>
+    <h1>{{ page.title }}</h1>
+    <div v-html="page.body.html"></div>
   </NuxtLayout>
 </template>
 
 <script setup>
+import { gql } from "graphql-request";
+const { $graphcmsClient } = useNuxtApp();
+const result = await $graphcmsClient.request(
+  gql`
+    {
+      page(where: { slug: "home" }) {
+        title
+        body {
+          html
+        }
+      }
+    }
+  `
+);
+const page = result.page;
 definePageMeta({
   layout: false,
   title: "Index Page",
