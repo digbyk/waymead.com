@@ -6,6 +6,7 @@ export default defineConfig({
   darkMode: "media", // or 'class'
   plugins: [
     require("windicss/plugin/typography"),
+    require("windicss/plugin/forms"),
     // ...
   ],
   theme: {
@@ -24,8 +25,11 @@ export default defineConfig({
         pink: colors.fuchsia,
       },
       fontFamily: {
-        sans: ["Graphik", "sans-serif"],
-        serif: ["Merriweather", "serif"],
+        sans: ["Roboto", "system-ui"],
+        serif: ["ui-serif", "Georgia"],
+        mono: ["ui-monospace", "SFMono-Regular"],
+        display: ["Oswald"],
+        body: ["Open Sans"],
       },
       spacing: {
         128: "32rem",

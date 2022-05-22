@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col h-screen w-screen font-sans bg-stone-300 dark:bg-stone-800 text-dark-300 dark:text-stone-200"
+    class="flex flex-col h-screen w-screen font-sans bg-stone-300 dark:bg-gradient-to-b dark:from-sky-900 dark:to-sky-800 text-dark-300 dark:text-stone-200"
   >
     <Head>
       <Title>Title</Title>
