@@ -8,7 +8,6 @@
 <script setup>
 import { gql } from "graphql-request";
 const { $graphcmsClient } = useNuxtApp();
-console.log($graphcmsClient);
 const result = await $graphcmsClient.request(
   gql`
     {
