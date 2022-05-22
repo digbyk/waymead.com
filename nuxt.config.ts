@@ -9,13 +9,6 @@ export default defineNuxtConfig({
   privateRuntimeConfig: {
     myPrivateToken: process.env.PRIVATE_TOKEN,
   },
-  googleFonts: {
-    preload: true,
-    families: {
-      Roboto: [100, 300, 500],
-      Lato: [100, 300],
-    },
-  },
   head: {
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
