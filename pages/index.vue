@@ -6,21 +6,8 @@
 </template>
 
 <script setup>
-import { gql } from "graphql-request";
-const { $graphcmsClient } = useNuxtApp();
-const result = await $graphcmsClient.request(
-  gql`
-    {
-      page(where: { slug: "home" }) {
-        title
-        content {
-          html
-        }
-      }
-    }
-  `
-);
-const page = result.page;
+const { $cmsClient } = useNuxtApp();
+const page = await $cmsClient.getPageBySlug("home");
 definePageMeta({
   layout: false,
   title: "Index Page",
