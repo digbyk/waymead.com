@@ -1,48 +1,33 @@
 <template>
   <div
-    class="flex flex-col h-screen w-screen font-sans bg-stone-300 dark:bg-gradient-to-b dark:from-sky-900 dark:to-sky-700 text-dark-300 dark:text-stone-200"
+    class="flex flex-col h-screen w-screen font-sans bg-stone-300 dark:bg-gradient-to-b dark:from-sky-900 dark:to-sky-700 text-dark-300 dark:text-stone-300"
   >
     <Head>
       <Title>waymead.com</Title>
       <Meta name="description" content="Description" />
     </Head>
-    <header class="container flex-0 p4 h4 m-auto">
-      <slot name="header">
-        <nav class="flex flex-row justify-between mx-auto p-4">
-          <ul class="flex flex-row flex-grow">
-            <li>Logo</li>
-          </ul>
-          <ul class="flex flex-row">
-            <li class="ml-4"><nuxt-link to="/"> Home</nuxt-link></li>
-            <li class="ml-4">hello</li>
-            <li class="ml-4">hello</li>
-          </ul>
-        </nav>
-      </slot>
-    </header>
-    <main class="container flex-0 p4 h4 m-auto flex-grow items-start">
-      <div class="mx-auto p-4">
+    <main
+      class="container flex-0 m-auto flex flex-grow justify-center items-center"
+    >
+      <div class="mx-auto text-8xl font-600 bg-clip-text">
         <slot />
       </div>
     </main>
-    <footer class="flex-0 p4 h10">
-      <div class="container mx-auto p-4">
-        <slot name="footer"> Footer </slot>
-      </div>
-    </footer>
   </div>
 </template>
 
 <script setup>
+import Navbar from "~~/components/layout/navbar.vue";
 useHead({
-  titleTemplate: "My App - %s",
-  // or, instead:
-  // titleTemplate: (title) => `My App - ${title}`,
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+  titleTemplate: "waymead - %s",
+  htmlAttrs: {
+    lang: "en",
+  },
+  viewport: "width=device-width, initial-scale=1",
   charset: "utf-8",
-  meta: [{ name: "description", content: "My amazing site." }],
+  meta: [{ name: "description", content: "waymead" }],
   bodyAttrs: {
-    class: "test",
+    class: "dark",
   },
 });
 definePageMeta({
