@@ -34,10 +34,14 @@ export default defineNuxtConfig({
     ],
   },
   pwa: {
+    meta: {
+      title: "waymead",
+      author: "digby",
+    },
     manifest: {
-      name: "waymead.com",
+      name: "waymead",
+      short_name: "waymead",
       lang: "en",
-      useWebmanifestExtension: false,
     },
   },
 });
