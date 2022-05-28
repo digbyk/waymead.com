@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="default">
-    <div v-html="page.content.html"></div>
+    <img src="/logos/waymead.svg" alt="Waymead logo" srcset="" class="p-8" />
   </NuxtLayout>
 </template>
 

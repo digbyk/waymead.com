@@ -1,10 +1,10 @@
 <template>
   <div
-    class="flex flex-col h-screen w-screen font-sans bg-stone-300 dark:bg-gradient-to-b dark:from-sky-900 dark:to-sky-700 text-dark-300 dark:text-stone-300"
+    class="flex flex-col h-full w-full font-sans bg-stone-300 dark:bg-gradient-to-br dark:from-sky-900 dark:to-sky-600 text-dark-300 dark:text-stone-300"
   >
     <Head>
-      <Title>waymead.com</Title>
-      <Meta name="description" content="Description" />
+      <Title>home</Title>
+      <Meta name="description" content="waymead.com home page" />
     </Head>
     <main
       class="container flex-0 m-auto flex flex-grow justify-center items-center"
@@ -38,4 +38,9 @@ definePageMeta({
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+html,
+body,
+#__nuxt {
+  height: 100%;
+}
 </style>
