@@ -2,19 +2,17 @@
   <div
     class="flex flex-col h-full w-full font-sans bg-stone-300 dark:bg-gradient-to-br dark:from-sky-900 dark:to-sky-600 text-dark-300 dark:text-stone-300"
   >
-    <header class="container flex-0 m-auto flex"><Header /></header>
-    <main class="container flex-0 m-auto flex flex-grow">
+    <main
+      class="container flex-0 m-auto flex flex-grow justify-center items-center"
+    >
       <div class="mx-auto text-8xl font-600 bg-clip-text">
         <slot />
       </div>
     </main>
-    <footer><Footer /></footer>
   </div>
 </template>
 
 <script setup>
-import Header from "~~/components/layout/header.vue";
-import Footer from "~~/components/layout/footer.vue";
 import Navbar from "~~/components/layout/navbar.vue";
 useHead({
   titleTemplate: "waymead - %s",
