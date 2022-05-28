@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   privateRuntimeConfig: {
     myPrivateToken: process.env.PRIVATE_TOKEN,
   },
+  modules: [],
   buildModules: ["nuxt-windicss", "@nuxtjs/google-fonts"],
   build: {},
   head: {
