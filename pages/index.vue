@@ -1,14 +1,12 @@
 <template>
-  <NuxtLayout name="default">
+  <NuxtLink href="/content">
     <img src="/logos/waymead.svg" alt="Waymead logo" srcset="" class="p-8" />
-  </NuxtLayout>
+  </NuxtLink>
 </template>
 
 <script setup>
-const { $cmsClient } = useNuxtApp();
-const page = await $cmsClient.getPageBySlug("home");
 definePageMeta({
-  layout: false,
-  title: "Index Page",
+  layout: "home",
+  title: "Home page",
 });
 </script>
