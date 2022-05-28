@@ -1,7 +1,6 @@
 import { defineNuxtConfig } from "nuxt";
 
 export default defineNuxtConfig({
-  buildModules: ["nuxt-windicss", "@nuxtjs/google-fonts"],
   publicRuntimeConfig: {
     graphcmsEndpoint: process.env.GRAPHCMS_ENDPOINT,
     graphcmsApiKey: process.env.GRAPHCMS_API_KEY,
@@ -9,11 +8,14 @@ export default defineNuxtConfig({
   privateRuntimeConfig: {
     myPrivateToken: process.env.PRIVATE_TOKEN,
   },
+  modules: ["@nuxtjs/pwa"],
+  buildModules: ["nuxt-windicss", "@nuxtjs/google-fonts"],
+  build: {},
   head: {
     htmlAttrs: {
       lang: "en",
     },
-    title: "my website title",
+    title: "waymead",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -32,10 +34,14 @@ export default defineNuxtConfig({
     ],
   },
   pwa: {
+    meta: {
+      title: "waymead",
+      author: "digby",
+    },
     manifest: {
-      name: "waymead.com",
+      name: "waymead",
+      short_name: "waymead",
       lang: "en",
-      useWebmanifestExtension: false,
     },
   },
 });
