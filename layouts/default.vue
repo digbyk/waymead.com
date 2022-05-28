@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col font-sans bg-stone-300 dark:bg-gradient-to-br dark:from-sky-900 dark:to-sky-700 text-dark-300 dark:text-stone-300"
+    class="flex flex-col font-sans bg-stone-300 dark:bg-gradient-to-br dark:from-sky-900 dark:to-sky-600 text-dark-300 dark:text-stone-300"
   >
     <Head>
       <Title>waymead.com</Title>
@@ -38,14 +38,14 @@ definePageMeta({
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
-body {
-  max-height: -webkit-fill-available;
-  max-height: -moz-available;
-  max-height: stretch;
-}
 html {
-  max-height: -webkit-fill-available;
-  max-height: -moz-available;
-  max-height: stretch;
+  min-height: -webkit-fill-available;
+  min-height: -moz-available;
+  min-height: stretch;
+}
+body {
+  min-height: -webkit-fill-available;
+  min-height: -moz-available;
+  min-height: stretch;
 }
 </style>
