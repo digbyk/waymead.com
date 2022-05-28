@@ -5,7 +5,6 @@
 </template>
 
 <script setup>
-console.log("jkhkjh");
 import { ref } from "vue";
 const name = ref("digby");
 

@@ -7,6 +7,7 @@
       <li class="ml-4"><NuxtLink to="/">Home</NuxtLink></li>
       <li class="ml-4"><NuxtLink to="/content">Content</NuxtLink></li>
       <li class="ml-4"><NuxtLink to="/reactive">Reactive</NuxtLink></li>
+      <li class="ml-4"><NuxtLink to="/page/home">Pages</NuxtLink></li>
       <li class="ml-4" @click="toggleDarkMode">🌙</li>
       <li class="ml-4">☀️</li>
     </ul>
