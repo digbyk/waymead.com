@@ -33,15 +33,24 @@ export default defineNuxtConfig({
       },
     ],
   },
+  ssr: false,
   pwa: {
+    icon: {
+      fileName: "android-chrome-512x512.png",
+    },
     meta: {
       title: "waymead",
       author: "digby",
     },
     manifest: {
+      lang: "en",
       name: "waymead",
       short_name: "waymead",
-      lang: "en",
+      display: "standalone",
+      theme_color: "#F11010",
+    },
+    workbox: {
+      dev: true, // or use a global variable to track the current NODE_ENV, etc to determine dev mode
     },
   },
 });
