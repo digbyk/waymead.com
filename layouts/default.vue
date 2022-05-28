@@ -39,12 +39,13 @@ definePageMeta({
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
 body {
-  min-height: 100vh;
-  min-height: stretch;
-  min-height: -webkit-fill-available;
+  max-height: -webkit-fill-available;
+  max-height: -moz-available;
+  max-height: stretch;
 }
 html {
-  height: stretch;
-  height: -webkit-fill-available;
+  max-height: -webkit-fill-available;
+  max-height: -moz-available;
+  max-height: stretch;
 }
 </style>
