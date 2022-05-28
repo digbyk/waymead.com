@@ -38,10 +38,9 @@ definePageMeta({
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
-html {
-  min-height: 100%;
-}
-body {
-  min-height: 100%;
+html,
+body,
+#__nuxt {
+  height: 100%;
 }
 </style>
