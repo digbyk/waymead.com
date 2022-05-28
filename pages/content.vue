@@ -1,5 +1,8 @@
 <template>
-  <div v-html="page.content.html"></div>
+  <div class="container prose text-white">
+    <h1>{{ page.title }}</h1>
+    <div v-html="page.content.html"></div>
+  </div>
 </template>
 
 <script setup>
