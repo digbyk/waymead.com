@@ -8,8 +8,8 @@ export default defineNuxtConfig({
   privateRuntimeConfig: {
     myPrivateToken: process.env.PRIVATE_TOKEN,
   },
-  modules: ["@nuxtjs/pwa"],
-  buildModules: ["nuxt-windicss", "@nuxtjs/google-fonts"],
+  modules: [],
+  buildModules: ["nuxt-windicss", "@nuxtjs/google-fonts", "@nuxtjs/pwa"],
   build: {},
   head: {
     htmlAttrs: {
