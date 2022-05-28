@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col h-screen w-screen font-sans bg-stone-300 dark:bg-gradient-to-br dark:from-sky-900 dark:to-sky-700 text-dark-300 dark:text-stone-300"
+    class="flex flex-col font-sans bg-stone-300 dark:bg-gradient-to-br dark:from-sky-900 dark:to-sky-700 text-dark-300 dark:text-stone-300"
   >
     <Head>
       <Title>waymead.com</Title>
