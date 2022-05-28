@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col h-full w-full font-sans bg-stone-300 dark:bg-gradient-to-br dark:from-sky-900 dark:to-sky-600 text-dark-300 dark:text-stone-300"
+    class="flex flex-col h-full w-full font-sans bg-stone-400 dark:bg-gradient-to-br dark:from-stone-900 dark:to-stone-800 text-stone-700 dark:text-stone-300"
   >
     <header class="container flex-0 m-auto flex"><Header /></header>
     <main class="container flex-0 m-auto flex flex-grow p-4">
