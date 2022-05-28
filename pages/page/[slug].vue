@@ -1,6 +1,6 @@
 <template>
-  <div class="container prose text-white">
-    <h1>{{ page.title }}</h1>
+  <div class="container">
+    <h1 class="text-2xl">{{ page.title }}</h1>
     <div v-html="page.content.html"></div>
   </div>
 </template>

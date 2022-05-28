@@ -1,7 +1,9 @@
 <template>
-  <nav class="container flex flex-row justify-between mx-auto p-4">
+  <nav class="container flex flex-row justify-between mx-auto p-4 items-center">
     <ul class="flex flex-row flex-grow">
-      <NuxtLink to="/"><li>Logo222</li></NuxtLink>
+      <NuxtLink to="/">
+        <li class="text-2xl">WAYMEAD</li>
+      </NuxtLink>
     </ul>
     <ul class="flex flex-row">
       <li class="ml-4"><NuxtLink to="/">Home</NuxtLink></li>

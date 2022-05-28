@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div @click="reverse">{{ name }}dsadad</div>
+    <div @click="reverse">{{ name }}</div>
   </div>
 </template>
 
