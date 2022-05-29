@@ -13,7 +13,9 @@ export default defineNuxtPlugin((nuxtApp) => {
       const query = gql`
         query getPageBySlug($slug: String!) {
           page(where: { slug: $slug }) {
+            id
             title
+            summary
             content {
               html
             }

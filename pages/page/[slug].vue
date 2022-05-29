@@ -8,8 +8,8 @@
 const route = useRoute();
 const { $cmsClient } = useNuxtApp();
 const page = await $cmsClient.getPageBySlug(route.params.slug);
-definePageMeta({
-  layout: "default",
-  title: "Content page",
+useHead({
+  title: page.title,
+  meta: [{ name: "description", content: page.summary }],
 });
 </script>
