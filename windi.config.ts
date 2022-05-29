@@ -25,6 +25,7 @@ export default defineConfig({
         pink: colors.fuchsia,
       },
       fontFamily: {
+        inter: ["Inter", "system-ui"],
         sans: ["Lato", "system-ui"],
         serif: ["ui-serif", "Georgia"],
         mono: ["ui-monospace", "SFMono-Regular"],

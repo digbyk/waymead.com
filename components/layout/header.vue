@@ -3,7 +3,9 @@
     class="container flex flex-col md:flex-row justify-between mx-auto p-4 items-center"
   >
     <ul class="flex flex-row flex-grow w-full justify-between items-center">
-      <li class="text-2xl py-1"><NuxtLink to="/">WAYMEAD</NuxtLink></li>
+      <li class="text-3xl py-1 font-inter font-light text-2xl self-center">
+        <NuxtLink to="/">WAYMEAD</NuxtLink>
+      </li>
       <li class="md:ml-4 py-1 block md:hidden" @click="toggleMenu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
