@@ -32,16 +32,15 @@
         <NuxtLink to="/">Home</NuxtLink>
       </li>
       <li class="md:ml-4 py-1" @click="hideMenu">
-        <NuxtLink to="/content">Content</NuxtLink>
+        <NuxtLink to="/page/about">About</NuxtLink>
       </li>
       <li class="md:ml-4 py-1" @click="hideMenu">
         <NuxtLink to="/reactive">Reactive</NuxtLink>
       </li>
       <li class="md:ml-4 py-1" @click="hideMenu">
-        <NuxtLink to="/page/home">Pages</NuxtLink>
+        <NuxtLink to="/login">Login</NuxtLink>
       </li>
       <li class="md:ml-4 py-1" @click="toggleDarkMode">🌙</li>
-      <li class="md:ml-4 py-1" @click="hideMenu">☀️</li>
     </ul>
   </nav>
 </template>
