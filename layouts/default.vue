@@ -4,7 +4,7 @@
   >
     <header class="container flex-0 m-auto flex"><Header /></header>
     <main class="container flex-0 m-auto flex flex-grow p-4">
-      <slot />
+      <NuxtPage />
     </main>
     <footer><Footer /></footer>
   </div>
@@ -24,7 +24,7 @@ useHead({
 });
 definePageMeta({
   layout: false,
-  title: "Some Page",
+  title: "This is the default page title",
 });
 </script>
 

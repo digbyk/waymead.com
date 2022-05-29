@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <h1 class="text-2xl">{{ page.title }}</h1>
     <div v-html="page.content.html"></div>
   </div>
 </template>
@@ -9,8 +8,8 @@
 const route = useRoute();
 const { $cmsClient } = useNuxtApp();
 const page = await $cmsClient.getPageBySlug(route.params.slug);
-definePageMeta({
-  layout: "default",
-  title: "Content page",
+useHead({
+  title: page.title,
+  meta: [{ name: "description", content: page.summary }],
 });
 </script>
