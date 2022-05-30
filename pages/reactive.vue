@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-full">
     <div @click="reverse">{{ name }}</div>
     <p>{{ data }}</p>
   </div>

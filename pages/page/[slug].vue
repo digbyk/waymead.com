@@ -1,8 +1,5 @@
 <template>
-  <article
-    class="container prose mx-auto p-4"
-    v-html="page.content.html"
-  ></article>
+  <article class="container prose-lg" v-html="page.content.html"></article>
 </template>
 
 <script setup>
