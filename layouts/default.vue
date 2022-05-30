@@ -1,12 +1,12 @@
 <template>
   <div
-    class="flex flex-col h-full w-full font-sans bg-stone-400 dark:bg-gradient-to-br dark:from-stone-900 dark:to-stone-800 text-stone-700 dark:text-stone-300"
+    class="flex flex-col h-full w-full font-sans bg-stone-400 dark:bg-gradient-to-br dark:from-stone-900 dark:to-stone-700 text-stone-700 dark:text-stone-300"
   >
-    <header class="container flex-0 m-auto flex"><Header /></header>
-    <main class="container flex-0 m-auto flex flex-grow p-4">
+    <header class="container flex-0 m-auto flex max-w-6xl"><Header /></header>
+    <main class="container flex-0 m-auto flex flex-grow p-4 max-w-6xl">
       <NuxtPage />
     </main>
-    <footer><Footer /></footer>
+    <footer class="container flex-0 m-auto flex max-w-6xl"><Footer /></footer>
   </div>
 </template>
 
