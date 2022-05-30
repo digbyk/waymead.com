@@ -1,7 +1,5 @@
 <template>
-  <nav
-    class="container flex flex-col md:flex-row justify-between mx-auto p-4 items-center"
-  >
+  <nav class="w-full flex flex-col md:flex-row justify-between">
     <ul class="flex flex-row flex-grow w-full justify-between items-center">
       <li class="text-3xl py-1 font-inter font-light text-2xl self-center">
         <NuxtLink to="/">WAYMEAD</NuxtLink>

@@ -1,5 +1,5 @@
 <template>
-  <nav class="container flex flex-row justify-between mx-auto p-4">
+  <nav class="w-full flex flex-row justify-between">
     <ul class="flex flex-row flex-grow">
       <li>&copy; Waymead 2008 - {{ year }}</li>
     </ul>
