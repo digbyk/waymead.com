@@ -1,16 +1,17 @@
 import { defineConfig } from "windicss/helpers";
 import colors from "windicss/colors";
-//import plugin from "windicss/plugin";
+import typography from "windicss/plugin/typography";
 
 export default defineConfig({
   darkMode: "media", // or 'class'
   plugins: [
-    require("windicss/plugin/typography"),
-    require("windicss/plugin/forms"),
-    // ...
+    typography({
+      dark: true,
+    }),
   ],
   theme: {
     extend: {
+      typography: {},
       screens: {
         sm: "640px",
         md: "768px",
