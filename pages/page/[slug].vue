@@ -1,5 +1,5 @@
 <template>
-  <article class="container prose-lg" v-html="page.content.html"></article>
+  <article class="w-full prose-lg" v-html="page.content.html"></article>
 </template>
 
 <script setup>
