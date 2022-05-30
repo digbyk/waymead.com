@@ -1,7 +1,5 @@
 <template>
-  <div class="container">
-    <div v-html="page.content.html"></div>
-  </div>
+  <article class="container prose" v-html="page.content.html"></article>
 </template>
 
 <script setup>
