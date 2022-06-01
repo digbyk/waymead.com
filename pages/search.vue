@@ -44,15 +44,17 @@
         <div class="flex-1 flex-grow">
           <ais-infinite-hits class="">
             <template v-slot:item="{ item, index, sendEvent }">
-              <div class="border border-dark-100 m-2 p-2">
-                <h4
-                  class="text-lg font-semibold"
-                  @click="sendEvent('conversion', item, 'Item viewed')"
-                >
-                  <ais-snippet attribute="title" :hit="item" />
-                </h4>
-                <ais-snippet attribute="description" :hit="item" />
-                {{ item.imageUrl }}
+              <div class="border border-dark-100 m-2 p-2 flex flex-row">
+                <img :src="item.thumbnail" alt="thumbnail" class="w-30 p-2" />
+                <div>
+                  <h4
+                    class="text-lg font-semibold"
+                    @click="sendEvent('conversion', item, 'Item viewed')"
+                  >
+                    <ais-snippet attribute="title" :hit="item" />
+                  </h4>
+                  <ais-snippet attribute="description" :hit="item" />
+                </div>
               </div>
             </template>
           </ais-infinite-hits>
