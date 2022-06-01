@@ -33,6 +33,9 @@
         <NuxtLink to="/page/about">About</NuxtLink>
       </li>
       <li class="md:ml-4 py-1" @click="hideMenu">
+        <NuxtLink to="/search">Search</NuxtLink>
+      </li>
+      <li class="md:ml-4 py-1" @click="hideMenu">
         <NuxtLink to="/reactive">Reactive</NuxtLink>
       </li>
       <li class="md:ml-4 py-1" @click="hideMenu">
