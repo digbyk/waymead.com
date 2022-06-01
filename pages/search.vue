@@ -11,16 +11,33 @@
         <ais-search-box placeholder="Search for anything..." class="w-full" />
         <ais-current-refinements />
       </div>
-      <div class="w-full flex flex-row">
-        <div class="w-1/4 m-2">
+      <div class="w-full flex flex-col md:flex-row">
+        <div class="w-full md:w-1/4 m-2">
           <h3 class="text-xl">Type</h3>
-          <ais-refinement-list attribute="type" operator="and" :limit="8" />
+          <ais-refinement-list attribute="type" operator="or" limit="8" />
+          <h3 class="text-xl">Level</h3>
+          <ais-refinement-list
+            attribute="levels"
+            operator="or"
+            limit="8"
+            show-more="true"
+          />
           <h3 class="text-xl">Subject</h3>
-          <ais-refinement-list attribute="subjects" operator="and" :limit="8" />
+          <ais-refinement-list
+            attribute="subjects"
+            operator="or"
+            limit="8"
+            show-more="true"
+          />
           <h3 class="text-xl">Topic</h3>
-          <ais-refinement-list attribute="topics" operator="and" :limit="8" />
+          <ais-refinement-list
+            attribute="topics"
+            operator="or"
+            limit="8"
+            searchable="true"
+          />
         </div>
-        <div class="flex-1 max-w-3/4 m-2 p-2">
+        <div class="flex-1 flex-grow">
           <ais-infinite-hits class="">
             <template v-slot:item="{ item, index }">
               <div class="border border-dark-100 m-2 p-2">
@@ -28,6 +45,7 @@
                   <ais-snippet attribute="title" :hit="item" />
                 </h4>
                 <ais-snippet attribute="description" :hit="item" />
+                {{ item.imageUrl }}
               </div>
             </template>
           </ais-infinite-hits>
@@ -90,7 +108,7 @@ useHead({
   flex-direction: row;
 }
 .ais-SearchBox-input {
-  font-size: 1.6rem;
+  font-size: 1rem;
   padding: 0.5rem;
 }
 </style>
