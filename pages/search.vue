@@ -6,8 +6,8 @@
       :middlewares="middlewares"
     >
       <ais-configure
-        attributesToSnippet="title,description:30"
-        snippetEllipsisText="[&hellip;]"
+        attributesToSnippet="title,description:40"
+        snippetEllipsisText="&hellip;"
         hitsPerPage="10"
         filters="market:uk"
       />
@@ -37,45 +37,49 @@
         </div>
         <div class="flex-1 flex-grow">
           <ais-infinite-hits class="">
-            <template v-slot:item="{ item, index, sendEvent }">
-              <div class="border border-dark-100 m-2 p-2 flex flex-row">
-                <img
-                  :src="item.thumbnail"
-                  :alt="item.title"
-                  class="w-30 md:w-40 p-2 object-contain align-top self-start"
-                />
-                <div class="flex flex-col">
-                  <h4
-                    class="text-lg font-semibold"
-                    @click="sendEvent('conversion', item, 'Item viewed')"
-                  >
-                    <ais-snippet attribute="title" :hit="item" />
-                  </h4>
-                  <div :title="item.description">
-                    <ais-snippet attribute="description" :hit="item" />
-                  </div>
-                  <div>
-                    <span class="">Levels</span>
-                    <ul class="flex flex-row flex-wrap list-none m-1 p0">
-                      <li
-                        v-for="(level, index) in item.levels"
-                        class="m-1 p-1 py-0 rounded bg-pink-400 text-black"
+            <template v-slot="{ items, sendEvent }">
+              <ul>
+                <li v-for="item in items" :key="item.objectID">
+                  <div class="border border-dark-100 m-2 p-2 flex flex-row">
+                    <img
+                      :src="item.thumbnail"
+                      :alt="item.title"
+                      class="w-30 md:w-40 p-2 object-contain align-top self-start"
+                    />
+                    <div class="flex flex-col">
+                      <h4
+                        class="text-lg font-semibold"
+                        @click="sendEvent('conversion', item, 'Item viewed')"
                       >
-                        <span class="whitespace-nowrap"> {{ level }}</span>
-                      </li>
-                    </ul>
-                    <span class="">Subjects</span>
-                    <ul class="flex flex-row list-none m-1 p0">
-                      <li
-                        v-for="subject in item.subjects"
-                        class="m-1 p-1 py-0 rounded bg-sky-400 text-black"
-                      >
-                        {{ subject }}
-                      </li>
-                    </ul>
+                        <ais-snippet attribute="title" :hit="item" />
+                      </h4>
+                      <div>
+                        <ais-snippet attribute="description" :hit="item" />
+                      </div>
+                      <div>
+                        <span class="">Levels</span>
+                        <ul class="flex flex-row flex-wrap list-none m-1 p0">
+                          <li
+                            v-for="(level, index) in item.levels"
+                            class="m-1 p-1 py-0 rounded bg-pink-400 text-black"
+                          >
+                            <span class="whitespace-nowrap"> {{ level }}</span>
+                          </li>
+                        </ul>
+                        <span class="">Subjects</span>
+                        <ul class="flex flex-row list-none m-1 p0">
+                          <li
+                            v-for="subject in item.subjects"
+                            class="m-1 p-1 py-0 rounded bg-sky-400 text-black"
+                          >
+                            {{ subject }}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </li>
+              </ul>
             </template>
           </ais-infinite-hits>
         </div>
