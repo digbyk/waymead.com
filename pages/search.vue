@@ -8,7 +8,7 @@
       <ais-configure
         attributesToSnippet="title,description:40"
         hitsPerPage="9"
-        filters="market:us"
+        filters="market:uk"
       />
 
       <div class="w-full">
@@ -18,13 +18,13 @@
       <div class="w-full flex flex-col md:flex-row">
         <div class="w-full md:w-1/4 m-2">
           <h3 class="text-xl">Type</h3>
-          <ais-refinement-list attribute="type" operator="or" :limit="8" />
+          <ais-refinement-list attribute="type" operator="or" :limit="20" />
           <h3 class="text-xl">Level</h3>
           <ais-refinement-list
             attribute="levels"
             operator="or"
             :limit="8"
-            :show-more="true"
+            :show-more="false"
           />
           <h3 class="text-xl">Subject</h3>
           <ais-refinement-list
@@ -32,13 +32,6 @@
             operator="or"
             :limit="8"
             :show-more="true"
-          />
-          <h3 class="text-xl">Topic</h3>
-          <ais-refinement-list
-            attribute="topics"
-            operator="or"
-            :limit="8"
-            :searchable="true"
           />
         </div>
         <div class="flex-1 flex-grow">
@@ -128,5 +121,33 @@ useHead({
 .ais-SearchBox-input {
   font-size: 1rem;
   padding: 0.5rem;
+  flex-grow: 2;
+}
+.ais-RefinementList-count {
+  border-radius: 0.5rem;
+}
+.ais-CurrentRefinements-item {
+  margin-right: 0.3rem;
+  margin-top: 0.3rem;
+  padding: 0.3rem 0.5rem;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #495588;
+  border-radius: 5px;
+}
+.ais-CurrentRefinements-category {
+  margin-left: 0.3em;
+  display: flex;
+}
+.ais-CurrentRefinements-categoryLabel,
+.ais-CurrentRefinements-delete,
+.ais-CurrentRefinements-label {
+  white-space: nowrap;
+  color: #fff;
+}
+.ais-CurrentRefinements-delete {
+  margin-left: 0.3rem;
+  background: none;
+  cursor: pointer;
 }
 </style>
