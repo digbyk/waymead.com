@@ -38,7 +38,11 @@
           <ais-infinite-hits class="">
             <template v-slot:item="{ item, index, sendEvent }">
               <div class="border border-dark-100 m-2 p-2 flex flex-row">
-                <img :src="item.thumbnail" alt="thumbnail" class="w-30 p-2" />
+                <img
+                  :src="item.thumbnail"
+                  :alt="item.title"
+                  class="w-30 p-2 object-contain align-top self-start"
+                />
                 <div>
                   <h4
                     class="text-lg font-semibold"
