@@ -42,12 +42,19 @@
               <ul>
                 <li v-for="item in items" :key="item.objectID">
                   <div class="border border-dark-100 m-2 p-2 flex flex-row">
-                    <img
-                      :src="item.thumbnail"
-                      :alt="item.title"
-                      class="w-30 md:w-40 p-2 object-contain align-top self-start"
-                    />
-                    <div class="flex flex-col">
+                    <div
+                      class="flex flex-col w-30 md:w-40 px-2 object-contain align-top self-start"
+                    >
+                      <NuxtLink :to="`/book/${item.isbn}/${item.title}`">
+                        <img
+                          :src="item.thumbnail"
+                          :alt="item.title"
+                          class=""
+                          @click="sendEvent('conversion', item, 'Viewed')"
+                        />
+                      </NuxtLink>
+                    </div>
+                    <div class="flex flex-col flex-1 px-2">
                       <h4 class="text-lg font-semibold">
                         <ais-snippet attribute="title" :hit="item" />
                       </h4>
@@ -73,14 +80,6 @@
                             {{ subject }}
                           </li>
                         </ul>
-                      </div>
-                      <div class="my-2">
-                        <a
-                          class="rounded bg-green-500 text-light-200 p-2 cursor-pointer"
-                          @click="sendEvent('conversion', item, 'Item bought')"
-                        >
-                          Buy now
-                        </a>
                       </div>
                     </div>
                   </div>
