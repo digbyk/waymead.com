@@ -24,7 +24,7 @@
     </ul>
     <ul
       id="menu"
-      class="hidden md:flex flex-col w-full md:flex-row md:justify-end"
+      class="hidden md:flex flex-col w-full md:flex-row md:justify-end transition-all"
     >
       <li class="md:ml-4 py-1" @click="hideMenu">
         <NuxtLink to="/">Home</NuxtLink>
@@ -36,7 +36,7 @@
         <NuxtLink to="/search">Search</NuxtLink>
       </li>
       <li class="md:ml-4 py-1" @click="hideMenu">
-        <NuxtLink to="/reactive">Reactive</NuxtLink>
+        <NuxtLink to="/test">Test</NuxtLink>
       </li>
       <li class="md:ml-4 py-1" @click="hideMenu">
         <NuxtLink to="/login">Login</NuxtLink>

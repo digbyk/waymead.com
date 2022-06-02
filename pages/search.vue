@@ -41,20 +41,22 @@
             <template v-slot="{ items, sendEvent }">
               <ul>
                 <li v-for="item in items" :key="item.objectID">
-                  <div class="border border-dark-100 m-2 p-2 flex flex-row">
+                  <div
+                    class="rounded-lg bg-white rounded-lg border border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 m-6 flex flex-row"
+                  >
                     <div
-                      class="flex flex-col w-30 md:w-40 px-2 object-contain align-top self-start"
+                      class="flex flex-col w-30 md:w-40 object-contain align-top self-start"
                     >
                       <NuxtLink :to="`/book/${item.isbn}/${item.title}`">
                         <img
                           :src="item.thumbnail"
                           :alt="item.title"
-                          class=""
                           @click="sendEvent('conversion', item, 'Viewed')"
+                          class="rounded-l-lg"
                         />
                       </NuxtLink>
                     </div>
-                    <div class="flex flex-col flex-1 px-2">
+                    <div class="flex flex-col flex-1 py-2 px-4">
                       <h4 class="text-lg font-semibold">
                         <ais-snippet attribute="title" :hit="item" />
                       </h4>
