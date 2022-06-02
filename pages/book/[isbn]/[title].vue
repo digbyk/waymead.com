@@ -11,7 +11,9 @@
       </div>
     </div>
     <h3 class="text-lg">Recommendations</h3>
-    <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+    <ul
+      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-6"
+    >
       <li v-for="product in relatedProducts">
         <div
           class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 object-contain"
