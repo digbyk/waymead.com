@@ -4,6 +4,7 @@
       :index-name="indexName"
       :search-client="algolia"
       :middlewares="middlewares"
+      :routing="routing"
     >
       <ais-configure
         attributesToSnippet="title,description:40"
@@ -47,10 +48,7 @@
                       class="w-30 md:w-40 p-2 object-contain align-top self-start"
                     />
                     <div class="flex flex-col">
-                      <h4
-                        class="text-lg font-semibold"
-                        @click="sendEvent('conversion', item, 'Item viewed')"
-                      >
+                      <h4 class="text-lg font-semibold">
                         <ais-snippet attribute="title" :hit="item" />
                       </h4>
                       <div>
@@ -75,6 +73,14 @@
                             {{ subject }}
                           </li>
                         </ul>
+                      </div>
+                      <div class="my-2">
+                        <a
+                          class="rounded bg-green-500 text-light-200 p-2 cursor-pointer"
+                          @click="sendEvent('conversion', item, 'Item bought')"
+                        >
+                          Buy now
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -103,6 +109,7 @@ import {
 } from "vue-instantsearch/vue3/es";
 import aa from "search-insights";
 import { createInsightsMiddleware } from "instantsearch.js/es/middlewares";
+import { history } from "instantsearch.js/es/lib/routers";
 
 aa("setUserToken", "test-user-123");
 const insightsMiddleware = createInsightsMiddleware({
@@ -112,7 +119,9 @@ const insightsMiddleware = createInsightsMiddleware({
 const indexName = "resources";
 const algolia = useAlgolia();
 const middlewares = [insightsMiddleware];
-
+const routing = {
+  router: history(),
+};
 useHead({
   title: "Search",
   meta: [{ name: "description", content: "Searching" }],
