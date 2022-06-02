@@ -6,8 +6,9 @@
       :middlewares="middlewares"
     >
       <ais-configure
-        attributesToSnippet="title,description:40"
-        hitsPerPage="9"
+        attributesToSnippet="title,description:30"
+        snippetEllipsisText="[&hellip;]"
+        hitsPerPage="10"
         filters="market:uk"
       />
 
@@ -50,7 +51,7 @@
                   >
                     <ais-snippet attribute="title" :hit="item" />
                   </h4>
-                  <div>
+                  <div :title="item.description">
                     <ais-snippet attribute="description" :hit="item" />
                   </div>
                   <div>
