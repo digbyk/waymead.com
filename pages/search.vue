@@ -128,5 +128,9 @@ useHead({
 .ais-SearchBox-input {
   font-size: 1rem;
   padding: 0.5rem;
+  flex-grow: 2;
+}
+.ais-RefinementList-count {
+  border-radius: 0.5rem;
 }
 </style>
