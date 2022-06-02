@@ -42,17 +42,17 @@
               <ul>
                 <li v-for="item in items" :key="item.objectID">
                   <div
-                    class="rounded-lg bg-white rounded-lg border border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 m-6 flex flex-row"
+                    class="rounded-lg border bg-white border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 m-6 flex flex-col md:flex-row"
                   >
                     <div
-                      class="flex flex-col w-30 md:w-40 object-contain align-top self-start"
+                      class="flex flex-col w-full md:w-40 h-80 md:h-full object-contain align-top self-start overflow-hidden"
                     >
                       <NuxtLink :to="`/book/${item.isbn}/${item.title}`">
                         <img
                           :src="item.thumbnail"
                           :alt="item.title"
                           @click="sendEvent('conversion', item, 'Viewed')"
-                          class="rounded-l-lg"
+                          class="rounded-t-lg md:rounded-l-lg md:rounded-tr-none w-full"
                         />
                       </NuxtLink>
                     </div>
