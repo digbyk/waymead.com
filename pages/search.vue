@@ -15,7 +15,7 @@
 
       <div class="w-full">
         <ais-search-box placeholder="Search for anything..." class="w-full" />
-        <ais-current-refinements />
+        <ais-current-refinements class="w-full flex flex-row flex-wrap" />
       </div>
       <div class="w-full flex flex-col md:flex-row">
         <div class="w-full md:w-1/4 m-2">
@@ -151,9 +151,12 @@ useHead({
 .ais-CurrentRefinements-list {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .ais-CurrentRefinements-item {
   margin: 0 0.5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .ais-SearchBox-form {
   display: flex;
