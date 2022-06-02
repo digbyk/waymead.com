@@ -1,16 +1,20 @@
 <template>
   <div class="w-full">
-    <div class="flex flex-row">
-      <div class="p-2 w-120 md:w-160">
-        <img :src="product.thumbnail" :alt="product.title" />
+    <div class="flex flex-col md:flex-row">
+      <div class="w-full md:w-1/2">
+        <img
+          :src="product.thumbnail"
+          :alt="product.title"
+          class="w-xl rounded-t-lg md:rounded-l-lg md:rounded-tr-none my-2"
+        />
       </div>
-      <div class="p-2 flex-grow">
-        <h1 class="text-2xl">{{ product.title }}</h1>
+      <div class="flex-grow p-2">
+        <h1 class="text-3xl">{{ product.title }}</h1>
         <h2>{{ product.isbn }}</h2>
-        <div v-html="product.description"></div>
       </div>
     </div>
-    <h3 class="text-lg">Recommendations</h3>
+    <div v-html="product.description" class="prose-xl"></div>
+    <h3 class="text-2xl my-4">Recommendations</h3>
     <ul
       class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-6"
     >
