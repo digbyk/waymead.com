@@ -5,7 +5,7 @@
         <bgimage :src="product.thumbnail" :alt="product.title" />
       </div>
 
-      <div class="w-full md:w-1/2 pl-4">
+      <div class="w-full md:w-1/2 pt-4 pl-0 md:pt-0 md:pl-4">
         <h1 class="text-3xl">{{ product.title }}</h1>
         <h2>{{ product.isbn }}</h2>
         <span class="">Levels</span>
