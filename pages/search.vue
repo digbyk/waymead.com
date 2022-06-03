@@ -12,7 +12,6 @@
         hitsPerPage="10"
         filters="market:uk"
       />
-
       <div class="w-full">
         <ais-search-box
           placeholder="Search for anything..."

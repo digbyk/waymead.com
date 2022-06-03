@@ -14,6 +14,7 @@ export default defineNuxtConfig({
   algolia: {
     apiKey: process.env.ALGOLIA_API_KEY,
     applicationId: process.env.ALGOLIA_APP_ID,
+    recommend: true,
   },
   head: {
     htmlAttrs: {

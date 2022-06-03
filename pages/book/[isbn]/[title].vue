@@ -44,7 +44,7 @@
           </div>
           <div class="p-4">
             <h4
-              class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              class="mb-2 text-md tracking-tight text-gray-900 dark:text-white"
             >
               {{ product.title }}
             </h4>
@@ -61,6 +61,8 @@ const runtimeConfig = useRuntimeConfig();
 
 const route = useRoute();
 const algolia = useAlgolia();
+//const { result, get } = useAlgoliaRecommend();
+
 const index = algolia.initIndex("resources");
 const { hits } = await index.search(route.params.isbn, {
   hitsPerPage: 1,
@@ -79,7 +81,6 @@ const { results } = await client.getRelatedProducts([
   },
 ]);
 const relatedProducts = results[0].hits;
-
 useHead({
   title: product.title,
   meta: [{ name: "description", content: product.description }],
