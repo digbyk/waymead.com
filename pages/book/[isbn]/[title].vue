@@ -1,19 +1,52 @@
 <template>
   <div class="w-full">
     <div class="flex flex-col md:flex-row">
-      <div class="w-full md:w-1/2">
-        <img
-          :src="product.thumbnail"
-          :alt="product.title"
-          class="w-xl rounded-t-lg md:rounded-l-lg md:rounded-tr-none my-2"
-        />
+      <div
+        class="w-full md:w-1/2 bg-cover bg-no-repeat bg-center flex place-content-center rounded-t-lg md:rounded-tr-none"
+        :style="{
+          'backdrop-filter': 'blur(118px)',
+          backgroundImage: `url(${product.thumbnail})`,
+        }"
+      >
+        <div
+          class="w-full h-full bg-cover bg-no-repeat bg-center flex place-content-center rounded-t-lg md:rounded-tr-none"
+          :style="{
+            background: 'rgba(255, 255, 255, 0.2)',
+            'backdrop-filter': 'blur(20px)',
+          }"
+        >
+          <img
+            :src="product.thumbnail"
+            :alt="product.title"
+            class="w-xl rounded-t-lg md:rounded-l-lg md:rounded-tr-none m-8 w-max"
+          />
+        </div>
       </div>
       <div class="flex-grow p-2">
         <h1 class="text-3xl">{{ product.title }}</h1>
         <h2>{{ product.isbn }}</h2>
+
+        <span class="">Levels</span>
+        <ul class="flex flex-row flex-wrap list-none m-1 p0">
+          <li
+            v-for="(level, index) in product.levels"
+            class="m-1 p-1 py-0 rounded bg-pink-400 text-black"
+          >
+            <span class="whitespace-nowrap"> {{ level }}</span>
+          </li>
+        </ul>
+        <span class="">Subjects</span>
+        <ul class="flex flex-row list-none m-1 p0">
+          <li
+            v-for="subject in product.subjects"
+            class="m-1 p-1 py-0 rounded bg-sky-400 text-black"
+          >
+            {{ subject }}
+          </li>
+        </ul>
       </div>
     </div>
-    <div v-html="product.description" class="prose-xl"></div>
+    <div v-html="product.description" class="prose-xl mt-4"></div>
     <h3 class="text-2xl my-4">Recommendations</h3>
     <ul
       class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-6"
