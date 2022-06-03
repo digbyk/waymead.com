@@ -41,7 +41,15 @@
         </div>
         <div class="flex-1 flex-grow">
           <ais-infinite-hits>
-            <template v-slot="{ items, sendEvent }">
+            <template
+              v-slot="{
+                items,
+                refinePrevious,
+                refineNext,
+                isLastPage,
+                sendEvent,
+              }"
+            >
               <ul>
                 <li v-for="item in items" :key="item.objectID" class="m-0">
                   <div
@@ -89,10 +97,14 @@
                     </div>
                   </div>
                 </li>
+                <li v-if="!isLastPage" class="flex place-content-center">
+                  <button @click="refineNext" class="">
+                    Show more results
+                  </button>
+                </li>
               </ul>
             </template>
           </ais-infinite-hits>
-          <button>Load more content</button>
         </div>
       </div>
     </ais-instant-search>
