@@ -24,6 +24,7 @@ useHead({
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700&family=Lato:wght@300;400;700&family=Roboto:wght@100;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 html,
 body,
 #__nuxt {

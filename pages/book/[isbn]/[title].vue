@@ -28,9 +28,9 @@
         </ul>
         <button
           @click="buyButtonClicked"
-          class="bg-green-500 p-2 rounded-sm text-light-300"
+          class="bg-green-500 p-2 rounded-sm text-light-300 flex flex-row align-center"
         >
-          Buy now 🛒
+          <span>Buy now</span> <span class="material-icons">shopping_cart</span>
         </button>
       </div>
     </div>
