@@ -21,7 +21,7 @@
         <ais-current-refinements class="w-full flex flex-row flex-wrap" />
       </div>
       <div class="w-full flex flex-col md:flex-row">
-        <div class="w-full md:w-1/4 m-2 p-2">
+        <div class="w-full md:w-1/4 p-2">
           <div :open="showFilters" class="">
             <div
               @click="showFilters()"
@@ -50,7 +50,7 @@
             </div>
           </div>
         </div>
-        <div class="flex-1 flex-grow">
+        <div class="flex-1 flex-grow md:p-2">
           <ais-infinite-hits>
             <template
               v-slot="{
@@ -62,9 +62,9 @@
               }"
             >
               <ul>
-                <li v-for="item in items" :key="item.objectID" class="m-0">
+                <li v-for="item in items" :key="item.objectID" class="m-0 mb-2">
                   <div
-                    class="rounded-lg border bg-white border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 m-2 flex flex-col md:flex-row"
+                    class="rounded-lg border bg-white border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 flex flex-col md:flex-row"
                   >
                     <div class="flex flex-col w-full md:w-60">
                       <NuxtLink
