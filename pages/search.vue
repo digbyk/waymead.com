@@ -21,26 +21,34 @@
         <ais-current-refinements class="w-full flex flex-row flex-wrap" />
       </div>
       <div class="w-full flex flex-col md:flex-row">
-        <div class="w-full md:w-1/4 m-2">
-          <details :open="showFilters">
-            <summary>Filters</summary>
-            <h3 class="text-xl">Type</h3>
-            <ais-refinement-list attribute="type" operator="or" :limit="20" />
-            <h3 class="text-xl">Level</h3>
-            <ais-refinement-list
-              attribute="levels"
-              operator="or"
-              :limit="8"
-              :show-more="true"
-            />
-            <h3 class="text-xl">Subject</h3>
-            <ais-refinement-list
-              attribute="subjects"
-              operator="or"
-              :limit="8"
-              :show-more="true"
-            />
-          </details>
+        <div class="w-full md:w-1/4 m-2 p-2">
+          <div :open="showFilters" class="">
+            <div
+              @click="showFilters()"
+              class="text-xl flex flex-row align-center justify-between"
+            >
+              <span>Filters</span>
+              <span class="material-icons">expand_more</span>
+            </div>
+            <div id="filters" class="hidden md:flex flex-col">
+              <h3 class="text-xl">Type</h3>
+              <ais-refinement-list attribute="type" operator="or" :limit="20" />
+              <h3 class="text-xl">Level</h3>
+              <ais-refinement-list
+                attribute="levels"
+                operator="or"
+                :limit="8"
+                :show-more="true"
+              />
+              <h3 class="text-xl">Subject</h3>
+              <ais-refinement-list
+                attribute="subjects"
+                operator="or"
+                :limit="8"
+                :show-more="true"
+              />
+            </div>
+          </div>
         </div>
         <div class="flex-1 flex-grow">
           <ais-infinite-hits>
@@ -56,7 +64,7 @@
               <ul>
                 <li v-for="item in items" :key="item.objectID" class="m-0">
                   <div
-                    class="rounded-lg border bg-white border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 m-4 flex flex-col md:flex-row"
+                    class="rounded-lg border bg-white border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 m-2 flex flex-col md:flex-row"
                   >
                     <div class="flex flex-col w-full md:w-60">
                       <NuxtLink
@@ -135,7 +143,9 @@ aa("setUserToken", "test-user-123");
 const insightsMiddleware = createInsightsMiddleware({
   insightsClient: aa,
 });
-let showFilters = true;
+const showFilters = () => {
+  document.getElementById("filters").classList.toggle("hidden");
+};
 const indexName = "resources";
 const algolia = useAlgolia();
 const middlewares = [insightsMiddleware];
