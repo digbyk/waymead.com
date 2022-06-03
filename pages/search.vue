@@ -66,7 +66,7 @@
                   <div
                     class="rounded-lg border bg-white border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 flex flex-col md:flex-row"
                   >
-                    <div class="flex flex-col w-full md:w-60">
+                    <div class="flex flex-col w-full md:w-60 h-60 md:h-80">
                       <NuxtLink
                         :to="`/book/${item.isbn}/${item.title}?queryID=${item.__queryID}`"
                         class="h-full"
