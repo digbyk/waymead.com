@@ -1,28 +1,10 @@
 <template>
   <div class="w-full">
     <div class="flex flex-col md:flex-row">
-      <div
-        class="w-full md:w-1/2 bg-cover bg-no-repeat bg-center flex place-content-center rounded-t-lg md:rounded-tr-none"
-        :style="{
-          'backdrop-filter': 'blur(118px)',
-          backgroundImage: `url(${product.thumbnail})`,
-        }"
-      >
-        <div
-          class="w-full h-full bg-cover bg-no-repeat bg-center flex place-content-center rounded-t-lg md:rounded-tr-none"
-          :style="{
-            background: 'rgba(255, 255, 255, 0.2)',
-            'backdrop-filter': 'blur(20px)',
-          }"
-        >
-          <img
-            :src="product.thumbnail"
-            :alt="product.title"
-            class="w-xl rounded-t-lg md:rounded-l-lg md:rounded-tr-none m-8 w-max"
-          />
-        </div>
+      <div class="w-full md:w-1/2 h-60 md:h-80">
+        <bgimage :src="product.thumbnail" :alt="product.title" />
       </div>
-      <div class="flex-grow p-2">
+      <div class="w-full md:w-1/2 p-2">
         <h1 class="text-3xl">{{ product.title }}</h1>
         <h2>{{ product.isbn }}</h2>
 
@@ -55,16 +37,12 @@
         <div
           class="max-w-sm rounded-lg border bg-light-100 border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 object-contain"
         >
-          <div class="h-60 overflow-hidden">
-            <NuxtLink :to="`/book/${product.isbn}/${product.title}`">
-              <img
-                :src="product.thumbnail"
-                :alt="product.title"
-                class="rounded-t-lg w-full"
-              />
+          <div class="w-full h-60">
+            <NuxtLink :to="`/book/${product.isbn}/${product.title}`" class="">
+              <bgimage :src="product.thumbnail" :alt="product.title" />
             </NuxtLink>
           </div>
-          <div class="p-5">
+          <div class="p-4">
             <h4
               class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
             >
