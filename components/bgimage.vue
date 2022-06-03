@@ -16,7 +16,7 @@
       <img
         :src="src"
         :alt="alt"
-        class="rounded-t-lg md:rounded-l-lg md:rounded-tr-none m-auto h-full"
+        class="rounded-t-lg md:rounded-l-lg md:rounded-tr-none m-auto max-h-full"
       />
     </div>
   </div>
