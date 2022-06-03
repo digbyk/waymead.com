@@ -6,13 +6,11 @@
     <main class="container flex-auto m-auto p-4">
       <NuxtPage />
     </main>
-    <footer class="container m-auto p-4"><Footer /></footer>
   </div>
 </template>
 
 <script setup>
 import Header from "@/components/layout/_header.vue";
-import Footer from "@/components/layout/_footer.vue";
 useHead({
   titleTemplate: "waymead - %s",
   htmlAttrs: {
