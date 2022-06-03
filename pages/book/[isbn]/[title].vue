@@ -101,4 +101,9 @@ const { results } = await client.getRelatedProducts([
   },
 ]);
 const relatedProducts = results[0].hits;
+
+useHead({
+  title: product.title,
+  meta: [{ name: "description", content: product.description }],
+});
 </script>
