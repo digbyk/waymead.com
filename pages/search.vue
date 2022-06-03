@@ -7,12 +7,12 @@
       :routing="routing"
     >
       <ais-configure
+        clickAnalytics="true"
         attributesToSnippet="title,description:40"
         snippetEllipsisText="&hellip;"
         hitsPerPage="10"
         filters="market:uk"
       />
-
       <div class="w-full">
         <ais-search-box
           placeholder="Search for anything..."
@@ -60,7 +60,7 @@
                   >
                     <div class="flex flex-col w-full md:w-60">
                       <NuxtLink
-                        :to="`/book/${item.isbn}/${item.title}`"
+                        :to="`/book/${item.isbn}/${item.title}?queryID=${item.__queryID}`"
                         class="h-full"
                       >
                         <bgimage
@@ -173,6 +173,12 @@ useHead({
 .ais-RefinementList-count {
   align-self: flex-end;
 }
+.ais-RefinementList-label {
+  align-items: center;
+}
+.ais-RefinementList-checkbox {
+  margin-right: 0.5rem;
+}
 .ais-CurrentRefinements-list {
   display: flex;
   flex-direction: row;
@@ -191,6 +197,8 @@ useHead({
   font-size: 1rem;
   padding: 0.5rem;
   flex-grow: 2;
+  color: #333;
+  font-size: 1.5rem;
 }
 .ais-RefinementList-count {
   border-radius: 0.5rem;

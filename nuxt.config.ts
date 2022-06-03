@@ -14,6 +14,7 @@ export default defineNuxtConfig({
   algolia: {
     apiKey: process.env.ALGOLIA_API_KEY,
     applicationId: process.env.ALGOLIA_APP_ID,
+    recommend: true,
   },
   head: {
     htmlAttrs: {
@@ -29,13 +30,7 @@ export default defineNuxtConfig({
         content: "waymead.com",
       },
     ],
-    link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon-196.png" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:wght@100;300;400;700&display=swap",
-      },
-    ],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon-196x196.png" }],
   },
   ssr: false,
   pwa: {

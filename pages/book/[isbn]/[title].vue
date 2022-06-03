@@ -4,10 +4,10 @@
       <div class="w-full md:w-1/2 h-60 md:h-80">
         <bgimage :src="product.thumbnail" :alt="product.title" />
       </div>
-      <div class="w-full md:w-1/2 p-2">
+
+      <div class="w-full md:w-1/2 pl-4">
         <h1 class="text-3xl">{{ product.title }}</h1>
         <h2>{{ product.isbn }}</h2>
-
         <span class="">Levels</span>
         <ul class="flex flex-row flex-wrap list-none m-1 p0">
           <li
@@ -18,7 +18,7 @@
           </li>
         </ul>
         <span class="">Subjects</span>
-        <ul class="flex flex-row list-none m-1 p0">
+        <ul class="flex flex-row flex-wrap list-none m-1 p0">
           <li
             v-for="subject in product.subjects"
             class="m-1 p-1 py-0 rounded bg-sky-400 text-black"
@@ -26,6 +26,12 @@
             {{ subject }}
           </li>
         </ul>
+        <button
+          @click="buyButtonClicked"
+          class="bg-green-500 p-2 rounded-sm text-light-300 flex flex-row align-center"
+        >
+          <span>Buy now</span> <span class="material-icons">shopping_cart</span>
+        </button>
       </div>
     </div>
     <div v-html="product.description" class="prose-xl mt-4"></div>
@@ -44,7 +50,7 @@
           </div>
           <div class="p-4">
             <h4
-              class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+              class="mb-2 text-md tracking-tight text-gray-900 dark:text-white"
             >
               {{ product.title }}
             </h4>
@@ -57,10 +63,15 @@
 
 <script setup>
 import algoliarecommend from "@algolia/recommend";
+import aa from "search-insights";
+aa("setUserToken", "test-user-123");
 const runtimeConfig = useRuntimeConfig();
 
 const route = useRoute();
 const algolia = useAlgolia();
+//const { result, get } = useAlgoliaRecommend();
+const queryID = route.query.queryID;
+
 const index = algolia.initIndex("resources");
 const { hits } = await index.search(route.params.isbn, {
   hitsPerPage: 1,
@@ -79,6 +90,20 @@ const { results } = await client.getRelatedProducts([
   },
 ]);
 const relatedProducts = results[0].hits;
+
+const buyButtonClicked = () => {
+  aa("sendEvents", [
+    {
+      index: "resources",
+      eventType: "conversion",
+      eventName: "Buy button clicked",
+      userToken: "test-user-123",
+      queryID: queryID,
+      objectIDs: [product.id],
+      timestamp: new Date().getTime(),
+    },
+  ]);
+};
 
 useHead({
   title: product.title,
