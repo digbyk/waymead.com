@@ -15,34 +15,37 @@
 
       <div class="w-full">
         <ais-search-box placeholder="Search for anything..." class="w-full" />
-        <ais-current-refinements />
+        <ais-current-refinements class="w-full flex flex-row flex-wrap" />
       </div>
       <div class="w-full flex flex-col md:flex-row">
         <div class="w-full md:w-1/4 m-2">
-          <h3 class="text-xl">Type</h3>
-          <ais-refinement-list attribute="type" operator="or" :limit="20" />
-          <h3 class="text-xl">Level</h3>
-          <ais-refinement-list
-            attribute="levels"
-            operator="or"
-            :limit="8"
-            :show-more="false"
-          />
-          <h3 class="text-xl">Subject</h3>
-          <ais-refinement-list
-            attribute="subjects"
-            operator="or"
-            :limit="8"
-            :show-more="true"
-          />
+          <details :open="showFilters">
+            <summary>Filters</summary>
+            <h3 class="text-xl">Type</h3>
+            <ais-refinement-list attribute="type" operator="or" :limit="20" />
+            <h3 class="text-xl">Level</h3>
+            <ais-refinement-list
+              attribute="levels"
+              operator="or"
+              :limit="8"
+              :show-more="true"
+            />
+            <h3 class="text-xl">Subject</h3>
+            <ais-refinement-list
+              attribute="subjects"
+              operator="or"
+              :limit="8"
+              :show-more="true"
+            />
+          </details>
         </div>
         <div class="flex-1 flex-grow">
-          <ais-infinite-hits class="">
+          <ais-infinite-hits>
             <template v-slot="{ items, sendEvent }">
               <ul>
-                <li v-for="item in items" :key="item.objectID">
+                <li v-for="item in items" :key="item.objectID" class="m-0">
                   <div
-                    class="rounded-lg border bg-white border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 m-6 flex flex-col md:flex-row"
+                    class="rounded-lg border bg-white border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 m-4 flex flex-col md:flex-row"
                   >
                     <div
                       class="flex flex-col w-full md:w-40 h-80 md:h-full object-contain align-top self-start overflow-hidden"
@@ -89,6 +92,7 @@
               </ul>
             </template>
           </ais-infinite-hits>
+          <button>Load more content</button>
         </div>
       </div>
     </ais-instant-search>
@@ -103,7 +107,7 @@ import {
   AisHighlight,
   AisSnippet,
   AisConfigure,
-  AisPanel,
+  AisHitsPerPage,
   AisInfiniteHits,
   AisRefinementList,
   AisCurrentRefinements,
@@ -116,7 +120,7 @@ aa("setUserToken", "test-user-123");
 const insightsMiddleware = createInsightsMiddleware({
   insightsClient: aa,
 });
-
+let showFilters = true;
 const indexName = "resources";
 const algolia = useAlgolia();
 const middlewares = [insightsMiddleware];
@@ -136,7 +140,7 @@ useHead({
   list-style-type: none;
 }
 .ais-RefinementList-list {
-  padding: 1rem;
+  padding: 0.5rem 0;
 }
 .ais-RefinementList-label {
   display: flex;
@@ -151,9 +155,12 @@ useHead({
 .ais-CurrentRefinements-list {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .ais-CurrentRefinements-item {
   margin: 0 0.5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .ais-SearchBox-form {
   display: flex;
