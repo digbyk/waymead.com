@@ -22,10 +22,6 @@ useHead({
   charset: "utf-8",
   meta: [{ name: "description", content: "waymead.com" }],
 });
-definePageMeta({
-  layout: false,
-  title: "This is the default page title",
-});
 </script>
 
 <style>

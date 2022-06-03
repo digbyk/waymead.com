@@ -3,9 +3,6 @@
 </template>
 
 <script setup>
-definePageMeta({
-  layout: "default",
-});
 useHead({
   title: "Login",
   meta: [{ name: "description", content: "Login page" }],
