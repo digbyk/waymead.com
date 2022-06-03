@@ -14,7 +14,10 @@
       />
 
       <div class="w-full">
-        <ais-search-box placeholder="Search for anything..." class="w-full" />
+        <ais-search-box
+          placeholder="Search for anything..."
+          class="w-full flex place-content-center"
+        />
         <ais-current-refinements class="w-full flex flex-row flex-wrap" />
       </div>
       <div class="w-full flex flex-col md:flex-row">
@@ -146,6 +149,12 @@ useHead({
 </script>
 
 <style>
+.ais-SearchBox-form {
+  width: 100%;
+}
+.ais-SearchBox-input {
+  text-align: center;
+}
 .ais-InfiniteHits-list {
   padding: 0;
   margin: 0;

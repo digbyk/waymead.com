@@ -53,7 +53,7 @@
     >
       <li v-for="product in relatedProducts">
         <div
-          class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 object-contain"
+          class="max-w-sm rounded-lg border bg-light-100 border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 object-contain"
         >
           <div class="h-60 overflow-hidden">
             <NuxtLink :to="`/book/${product.isbn}/${product.title}`">
