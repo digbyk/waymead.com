@@ -96,7 +96,7 @@
                           </li>
                         </ul>
                         <span class="">Subjects</span>
-                        <ul class="flex flex-row list-none m-1 p0">
+                        <ul class="flex flex-row flex-wrap list-none m-1 p0">
                           <li
                             v-for="subject in item.subjects"
                             class="m-1 p-1 py-0 rounded bg-sky-400 text-black"
