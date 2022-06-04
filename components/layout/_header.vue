@@ -4,7 +4,7 @@
       <li class="text-3xl py-1 font-inter font-light text-2xl self-center">
         <NuxtLink to="/">WAYMEAD</NuxtLink>
       </li>
-      <li class="md:ml-4 py-1 block md:hidden">
+      <li class="block md:hidden">
         <input
           type="checkbox"
           name="toggleMenu"
@@ -31,22 +31,26 @@
       id="menu"
       class="hidden md:flex flex-col w-full md:flex-row md:justify-end transition-all"
     >
-      <li class="md:ml-4 py-1" @click="hideMenu">
-        <NuxtLink to="/">Home</NuxtLink>
+      <li class="" @click="hideMenu">
+        <NuxtLink to="/" class="w-full p-1 flex place-content-center"
+          >Home</NuxtLink
+        >
       </li>
-      <li class="md:ml-4 py-1" @click="hideMenu">
-        <NuxtLink to="/page/about">About</NuxtLink>
+      <li class="" @click="hideMenu">
+        <NuxtLink to="/page/about" class="w-full p-1 flex place-content-center"
+          >About</NuxtLink
+        >
       </li>
-      <li class="md:ml-4 py-1" @click="hideMenu">
-        <NuxtLink to="/search">Search</NuxtLink>
+      <li class="" @click="hideMenu">
+        <NuxtLink to="/search" class="w-full p-1 flex place-content-center"
+          >Search</NuxtLink
+        >
       </li>
-      <li class="md:ml-4 py-1" @click="hideMenu">
-        <NuxtLink to="/test">Test</NuxtLink>
+      <li class="" @click="hideMenu">
+        <NuxtLink to="/test" class="w-full p-1 flex place-content-center"
+          >Test</NuxtLink
+        >
       </li>
-      <li class="md:ml-4 py-1" @click="hideMenu">
-        <NuxtLink to="/login">Login</NuxtLink>
-      </li>
-      <li class="md:ml-4 py-1" @click="toggleDarkMode">🌙</li>
     </ul>
   </nav>
 </template>
