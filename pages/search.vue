@@ -64,9 +64,9 @@
               <ul>
                 <li v-for="item in items" :key="item.objectID" class="m-0 mb-2">
                   <div
-                    class="rounded-lg border bg-white border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 flex flex-col md:flex-row"
+                    class="rounded-lg border bg-white border-gray-200 shadow-md dark:bg-dark-300 dark:border-gray-700 flex flex-col md:flex-row items-stretch"
                   >
-                    <div class="flex flex-col w-full md:w-60 h-60 md:h-80">
+                    <div class="flex flex-col w-full md:w-60">
                       <NuxtLink
                         :to="`/book/${item.isbn}/${item.title}?queryID=${item.__queryID}`"
                         class="h-full"
