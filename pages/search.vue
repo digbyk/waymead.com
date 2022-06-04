@@ -209,6 +209,11 @@ useHead({
   flex-grow: 2;
   color: #333;
   font-size: 1.5rem;
+  border-radius: 0.5rem;
+}
+.ais-SearchBox-submit {
+  background-color: green;
+  display: none;
 }
 .ais-RefinementList-count {
   border-radius: 0.5rem;

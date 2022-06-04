@@ -4,22 +4,27 @@
       <li class="text-3xl py-1 font-inter font-light text-2xl self-center">
         <NuxtLink to="/">WAYMEAD</NuxtLink>
       </li>
-      <li class="md:ml-4 py-1 block md:hidden" @click="toggleMenu">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          id="menu-button"
-          class="h-6 w-6 cursor-pointer md:hidden block"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
-        </svg>
+      <li class="md:ml-4 py-1 block md:hidden">
+        <input
+          type="checkbox"
+          name="toggleMenu"
+          id="toggleMenu"
+          class="hidden"
+          @change="toggleMenu"
+        />
+        <label class="burger" for="toggleMenu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="menu-button"
+            class="h-6 w-6 cursor-pointer md:hidden block stroke-dark-100 fill-dark-100 dark:stroke-light-100 dark:fill-light-100"
+            fill="none"
+            viewBox="0 0 25 25"
+          >
+            <path
+              d="M25 11.6758H13.3242V0H11.6758V11.6758H0V13.3242H11.6758V25H13.3242V13.3242H25V11.6758Z"
+            />
+          </svg>
+        </label>
       </li>
     </ul>
     <ul
@@ -79,3 +84,17 @@ localStorage.theme = "dark";
 // Whenever the user explicitly chooses to respect the OS preference
 localStorage.removeItem("theme");
 </script>
+
+<style>
+#menu {
+  transition: transform 0.1s ease-in-out 0.1s;
+}
+input#toggleMenu + label.burger #menu-button {
+  transform: rotateZ(0deg);
+  transition: transform 0.1s ease-in-out 0.1s;
+}
+input#toggleMenu:checked + label.burger #menu-button {
+  transform: rotateZ(45deg);
+  transition: transform 0.1s ease-in-out 0.1s;
+}
+</style>
