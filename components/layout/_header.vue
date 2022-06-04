@@ -10,6 +10,7 @@
           name="toggleMenu"
           id="toggleMenu"
           class="hidden"
+          :checked="showMenu"
           @change="toggleMenu"
         />
         <label class="burger" for="toggleMenu">
@@ -29,7 +30,8 @@
     </ul>
     <ul
       id="menu"
-      class="hidden md:flex flex-col w-full md:flex-row md:justify-end transition-all"
+      class="md:flex flex-col w-full md:flex-row md:justify-end transition-all"
+      :class="showMenu ? 'flex' : 'hidden'"
     >
       <li class="" @click="hideMenu">
         <NuxtLink to="/" class="w-full p-1 flex place-content-center"
@@ -47,22 +49,24 @@
         >
       </li>
       <li class="" @click="hideMenu">
-        <NuxtLink to="/test" class="w-full p-1 flex place-content-center"
-          >Test</NuxtLink
-        >
+        <NuxtLink to="/test" class="w-full p-1 flex place-content-center">
+          Test
+        </NuxtLink>
       </li>
     </ul>
   </nav>
 </template>
 
 <script setup>
+import { ref } from "vue";
+
+const showMenu = ref(false);
 const toggleMenu = () => {
-  const menu = document.querySelector("#menu");
-  menu.classList.toggle("hidden");
+  showMenu.value = !showMenu.value;
+  console.log(showMenu.value);
 };
 const hideMenu = () => {
-  const menu = document.querySelector("#menu");
-  menu.classList.add("hidden");
+  showMenu.value = false;
 };
 const toggleDarkMode = () => {
   const body = document.querySelector("body");
