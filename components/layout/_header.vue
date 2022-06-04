@@ -4,19 +4,20 @@
       <li class="text-3xl py-1 font-inter font-light text-2xl self-center">
         <NuxtLink to="/">WAYMEAD</NuxtLink>
       </li>
-      <li class="md:ml-4 py-1 block md:hidden">
+      <li class="block md:hidden">
         <input
           type="checkbox"
           name="toggleMenu"
           id="toggleMenu"
           class="hidden"
+          :checked="showMenu"
           @change="toggleMenu"
         />
         <label class="burger" for="toggleMenu">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="menu-button"
-            class="h-6 w-6 cursor-pointer md:hidden block stroke-dark-100 fill-dark-100 dark:stroke-light-100 dark:fill-light-100"
+            class="h-4 w-4 cursor-pointer md:hidden block stroke-dark-100 fill-dark-100 dark:stroke-light-100 dark:fill-light-100"
             fill="none"
             viewBox="0 0 25 25"
           >
@@ -29,36 +30,43 @@
     </ul>
     <ul
       id="menu"
-      class="hidden md:flex flex-col w-full md:flex-row md:justify-end transition-all"
+      class="md:flex flex-col w-full md:flex-row md:justify-end transition-all"
+      :class="showMenu ? 'flex' : 'hidden'"
     >
-      <li class="md:ml-4 py-1" @click="hideMenu">
-        <NuxtLink to="/">Home</NuxtLink>
+      <li class="" @click="hideMenu">
+        <NuxtLink to="/" class="w-full p-1 flex place-content-center"
+          >Home</NuxtLink
+        >
       </li>
-      <li class="md:ml-4 py-1" @click="hideMenu">
-        <NuxtLink to="/page/about">About</NuxtLink>
+      <li class="" @click="hideMenu">
+        <NuxtLink to="/page/about" class="w-full p-1 flex place-content-center"
+          >About</NuxtLink
+        >
       </li>
-      <li class="md:ml-4 py-1" @click="hideMenu">
-        <NuxtLink to="/search">Search</NuxtLink>
+      <li class="" @click="hideMenu">
+        <NuxtLink to="/search" class="w-full p-1 flex place-content-center"
+          >Search</NuxtLink
+        >
       </li>
-      <li class="md:ml-4 py-1" @click="hideMenu">
-        <NuxtLink to="/test">Test</NuxtLink>
+      <li class="" @click="hideMenu">
+        <NuxtLink to="/test" class="w-full p-1 flex place-content-center">
+          Test
+        </NuxtLink>
       </li>
-      <li class="md:ml-4 py-1" @click="hideMenu">
-        <NuxtLink to="/login">Login</NuxtLink>
-      </li>
-      <li class="md:ml-4 py-1" @click="toggleDarkMode">🌙</li>
     </ul>
   </nav>
 </template>
 
 <script setup>
+import { ref } from "vue";
+
+const showMenu = ref(false);
 const toggleMenu = () => {
-  const menu = document.querySelector("#menu");
-  menu.classList.toggle("hidden");
+  showMenu.value = !showMenu.value;
+  console.log(showMenu.value);
 };
 const hideMenu = () => {
-  const menu = document.querySelector("#menu");
-  menu.classList.add("hidden");
+  showMenu.value = false;
 };
 const toggleDarkMode = () => {
   const body = document.querySelector("body");
