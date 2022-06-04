@@ -139,7 +139,7 @@ import aa from "search-insights";
 import { createInsightsMiddleware } from "instantsearch.js/es/middlewares";
 import { history } from "instantsearch.js/es/lib/routers";
 
-aa("setUserToken", "test-user-123");
+aa("setUserToken", "test-user-321");
 const insightsMiddleware = createInsightsMiddleware({
   insightsClient: aa,
 });
