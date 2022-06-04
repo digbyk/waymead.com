@@ -64,7 +64,7 @@
 <script setup>
 import algoliarecommend from "@algolia/recommend";
 import aa from "search-insights";
-aa("setUserToken", "test-user-123");
+aa("setUserToken", "test-user-321");
 const runtimeConfig = useRuntimeConfig();
 
 const route = useRoute();
@@ -97,7 +97,7 @@ const buyButtonClicked = () => {
       index: "resources",
       eventType: "conversion",
       eventName: "Buy button clicked",
-      userToken: "test-user-123",
+      userToken: "test-user-321",
       queryID: queryID,
       objectIDs: [product.id],
       timestamp: new Date().getTime(),
