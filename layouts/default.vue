@@ -12,7 +12,7 @@
 <script setup>
 import Header from "@/components/layout/_header.vue";
 useHead({
-  titleTemplate: "waymead - %s",
+  titleTemplate: "Waymead - %s",
   htmlAttrs: {
     lang: "en",
   },

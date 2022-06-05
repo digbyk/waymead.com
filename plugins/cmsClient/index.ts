@@ -1,5 +1,4 @@
-import { GraphQLClient } from "graphql-request";
-import { gql } from "graphql-request";
+import { GraphQLClient, gql } from "graphql-request";
 
 export default defineNuxtPlugin((nuxtApp) => {
   const graphcmsClient = new GraphQLClient(nuxtApp.$config.graphcmsEndpoint, {
