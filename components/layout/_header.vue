@@ -63,7 +63,6 @@ import { ref } from "vue";
 const showMenu = ref(false);
 const toggleMenu = () => {
   showMenu.value = !showMenu.value;
-  console.log(showMenu.value);
 };
 const hideMenu = () => {
   showMenu.value = false;
