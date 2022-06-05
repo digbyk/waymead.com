@@ -1,8 +1,13 @@
 <template>
   <div class="w-full">
+    <div v-if="pending">Loading ...</div>
+    <div v-else>
+      {{ data }}
+    </div>
     <div @click="reverse">{{ name }}</div>
-    <p>{{ data }}</p>
+    <p></p>
     <p>{{ store.name }}</p>
+    Pending {{ pending }}
   </div>
 </template>
 
@@ -11,7 +16,7 @@ import { ref } from "vue";
 import { store } from "@/store/index.ts";
 
 const name = ref("Hello world");
-const { data: data } = await useFetch("/api/hello");
+const { data: data, pending } = useFetch("/api/hello");
 
 const reverse = () => {
   name.value = name.value.split("").reverse().join("");
