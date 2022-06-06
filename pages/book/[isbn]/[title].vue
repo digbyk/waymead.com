@@ -87,6 +87,7 @@ const { results } = await client.getRelatedProducts([
     indexName: "resources",
     objectID: product.id,
     maxRecommendations: 6,
+    queryParameters: { filters: "market:uk" },
   },
 ]);
 const relatedProducts = results[0].hits;
