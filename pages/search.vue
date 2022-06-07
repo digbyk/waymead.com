@@ -71,7 +71,7 @@
                         :to="`/book/${item.isbn}/${item.title}?queryID=${item.__queryID}`"
                         class="h-full"
                       >
-                        <bgimage
+                        <BgImage
                           :src="item.thumbnail"
                           :alt="item.title"
                           @click="sendEvent('conversion', item, 'Viewed')"

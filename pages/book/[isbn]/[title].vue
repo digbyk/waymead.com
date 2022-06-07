@@ -2,7 +2,7 @@
   <div class="w-full">
     <div class="flex flex-col md:flex-row">
       <div class="w-full md:w-1/2 h-60 md:h-80">
-        <bgimage :src="product.thumbnail" :alt="product.title" />
+        <BgImage :src="product.thumbnail" :alt="product.title" />
       </div>
 
       <div class="w-full md:w-1/2 pt-4 pl-0 md:pt-0 md:pl-4">
