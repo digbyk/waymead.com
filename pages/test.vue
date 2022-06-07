@@ -24,7 +24,6 @@
 <script setup>
 import { ref } from "vue";
 import { store } from "@/store/index.ts";
-import { SuperComponent } from "~~/.nuxt/components";
 
 const name = ref("Hello world");
 const { data: data, pending } = useFetch("/api/hello");
