@@ -45,7 +45,7 @@
         >
           <div class="w-full h-60">
             <NuxtLink :to="`/book/${product.isbn}/${product.title}`" class="">
-              <bgimage :src="product.thumbnail" :alt="product.title" />
+              <BgImage :src="product.thumbnail" :alt="product.title" />
             </NuxtLink>
           </div>
           <div class="p-4">
