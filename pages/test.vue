@@ -8,7 +8,6 @@
       <div @click="reverse">{{ name }}</div>
       <p></p>
       <p>{{ store.name }}</p>
-      Pending {{ pending }}
     </section>
     <section>
       <SuperComponent src="Hello">
@@ -33,7 +32,7 @@ const reverse = () => {
 };
 
 useHead({
-  title: "Test",
+  title: name,
   meta: [{ name: "description", content: "Testing" }],
 });
 </script>
