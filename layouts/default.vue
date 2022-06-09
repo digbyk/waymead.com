@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col min-h-full w-full font-sans bg-light-100 dark:bg-gradient-to-br dark:from-stone-900 dark:to-stone-700 text-stone-700 dark:text-stone-300"
+    class="flex flex-col min-h-full w-full font-sans bg-light-100 dark:bg-gradient-to-br dark:from-slate-900 dark:to-slate-700 text-stone-700 dark:text-stone-300"
   >
     <header class="container m-auto p-4">
       <Header />
