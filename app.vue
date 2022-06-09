@@ -6,7 +6,7 @@
 
 <script setup>
 useHead({
-  titleTemplate: "Waymead - %s",
+  titleTemplate: "%s | Waymead",
   htmlAttrs: {
     lang: "en",
   },
