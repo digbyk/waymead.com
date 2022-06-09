@@ -1,7 +1,7 @@
 <template>
   <nav class="w-full flex flex-col md:flex-row justify-between">
     <ul class="flex flex-row flex-grow w-full justify-between items-center">
-      <li class="text-3xl py-1 font-inter font-light text-2xl self-center">
+      <li class="text-2xl py-1 font-inter font-lightself-center">
         <NuxtLink to="/">WAYMEAD</NuxtLink>
       </li>
       <li class="block md:hidden">
@@ -30,28 +30,15 @@
     </ul>
     <ul
       id="menu"
-      class="md:flex flex-col w-full md:flex-row md:justify-end transition-all"
+      class="md:flex flex-col w-full md:flex-row md:justify-end transition-all items-center"
       :class="showMenu ? 'flex' : 'hidden'"
     >
-      <li class="" @click="hideMenu">
-        <NuxtLink to="/" class="w-full p-1 flex place-content-center"
-          >Home</NuxtLink
+      <li v-for="menuItem in menuItems" :key="1" class="" @click="hideMenu">
+        <NuxtLink
+          :to="menuItem.path"
+          class="w-full py-1 md:pl-6 flex place-content-center hover:text-dark-900 dark:hover:text-light-100"
+          >{{ menuItem.name }}</NuxtLink
         >
-      </li>
-      <li class="" @click="hideMenu">
-        <NuxtLink to="/page/about" class="w-full p-1 flex place-content-center"
-          >About</NuxtLink
-        >
-      </li>
-      <li class="" @click="hideMenu">
-        <NuxtLink to="/search" class="w-full p-1 flex place-content-center"
-          >Search</NuxtLink
-        >
-      </li>
-      <li class="" @click="hideMenu">
-        <NuxtLink to="/test" class="w-full p-1 flex place-content-center">
-          Test
-        </NuxtLink>
       </li>
     </ul>
   </nav>
@@ -60,6 +47,24 @@
 <script setup>
 import { ref } from "vue";
 
+const menuItems = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "About",
+    path: "/page/about",
+  },
+  {
+    name: "Search",
+    path: "/search",
+  },
+  {
+    name: "Test",
+    path: "/test",
+  },
+];
 const showMenu = ref(false);
 const toggleMenu = () => {
   showMenu.value = !showMenu.value;
