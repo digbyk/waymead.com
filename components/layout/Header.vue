@@ -36,9 +36,18 @@
       <li v-for="menuItem in menuItems" :key="1" class="" @click="hideMenu">
         <NuxtLink
           :to="menuItem.path"
-          class="w-full py-1 md:pl-6 flex place-content-center hover:text-dark-900 dark:hover:text-light-100"
+          class="w-full py-1 md:px-3 flex place-content-center hover:text-dark-900 dark:hover:text-light-100"
           >{{ menuItem.name }}</NuxtLink
         >
+      </li>
+      <li>
+        <button
+          class="w-full py-1 md:pl-3 flex place-content-center hover:text-dark-900 dark:hover:text-light-100"
+          @click="toggleDark()"
+        >
+          <span v-if="isDark" class="material-icons-outlined">dark_mode</span>
+          <span v-if="!isDark" class="material-icons-outlined">light_mode</span>
+        </button>
       </li>
     </ul>
   </nav>
@@ -46,6 +55,7 @@
 
 <script setup>
 import { ref } from "vue";
+import { useDark, useToggle } from "@vueuse/core";
 
 const menuItems = [
   {
@@ -72,20 +82,8 @@ const toggleMenu = () => {
 const hideMenu = () => {
   showMenu.value = false;
 };
-const toggleDarkMode = () => {
-  const body = document.querySelector("body");
-  if (
-    localStorage.theme === "dark" ||
-    (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.classList.remove("dark");
-    localStorage.theme = "light";
-  } else {
-    document.documentElement.classList.add("dark");
-    localStorage.theme = "dark";
-  }
-};
+const isDark = useDark();
+const toggleDark = useToggle(isDark);
 </script>
 
 <style>

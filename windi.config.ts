@@ -3,7 +3,7 @@ import colors from "windicss/colors";
 import typography from "windicss/plugin/typography";
 
 export default defineConfig({
-  darkMode: "media", // or 'class'
+  darkMode: "class", // or 'class'
   plugins: [
     typography({
       dark: true,
