@@ -42,11 +42,11 @@
       </li>
       <li>
         <button
-          class="w-full py-1 md:pl-6 flex place-content-center hover:text-dark-900 dark:hover:text-light-100"
+          class="w-full py-1 md:pl-3 flex place-content-center hover:text-dark-900 dark:hover:text-light-100"
           @click="toggleDark()"
         >
-          <span v-if="isDark" class="material-icons">dark_mode</span>
-          <span v-if="!isDark" class="material-icons">light_mode</span>
+          <span v-if="isDark" class="material-icons-outlined">dark_mode</span>
+          <span v-if="!isDark" class="material-icons-outlined">light_mode</span>
         </button>
       </li>
     </ul>
