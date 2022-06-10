@@ -28,9 +28,15 @@
         </ul>
         <button
           @click="buyButtonClicked"
-          class="bg-green-500 p-2 rounded-sm text-light-300 flex flex-row align-center"
+          class="bg-green-500 my-2 p-2 rounded-sm text-light-300 flex flex-row align-center"
         >
           <span>Buy now</span> <span class="material-icons">shopping_cart</span>
+        </button>
+        <button
+          @click="startShare"
+          class="bg-orange-500 my-2 p-2 rounded-sm text-light-300 flex flex-row align-center"
+        >
+          <span>Share</span> <span class="material-icons">share</span>
         </button>
       </div>
     </div>
@@ -64,6 +70,10 @@
 <script setup>
 import algoliarecommend from "@algolia/recommend";
 import aa from "search-insights";
+import { useShare } from "@vueuse/core";
+
+const { share, isSupported } = useShare();
+
 aa("setUserToken", "test-user-321");
 const runtimeConfig = useRuntimeConfig();
 
@@ -105,6 +115,13 @@ const buyButtonClicked = () => {
     },
   ]);
 };
+function startShare() {
+  share({
+    title: product.title,
+    text: product.title,
+    url: location.href,
+  });
+}
 
 useHead({
   title: product.title,
