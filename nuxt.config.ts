@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   privateRuntimeConfig: {
     myPrivateToken: process.env.PRIVATE_TOKEN,
   },
-  modules: ["@nuxtjs/algolia"],
+  modules: ["@vueuse/nuxt", "@nuxtjs/algolia"],
   buildModules: ["nuxt-windicss", "@nuxtjs/google-fonts"],
   build: {},
   algolia: {

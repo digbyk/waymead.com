@@ -16,7 +16,7 @@
       <div class="w-full">
         <ais-search-box
           placeholder="Search for anything..."
-          class="w-full flex place-content-center"
+          class="w-full flex place-content-center border-width-1 border-gray-600 dark:border-stone-300"
         />
         <ais-current-refinements class="w-full flex flex-row flex-wrap" />
       </div>
