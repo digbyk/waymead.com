@@ -33,6 +33,7 @@
           <span>Buy now</span> <span class="material-icons">shopping_cart</span>
         </button>
         <button
+          v-if="isSupported"
           @click="startShare"
           class="bg-orange-500 my-2 p-2 rounded-sm text-light-300 flex flex-row align-center"
         >
