@@ -5,6 +5,14 @@ export default defineNuxtConfig({
     public: {
       graphcmsEndpoint: process.env.GRAPHCMS_ENDPOINT,
       graphcmsApiKey: process.env.GRAPHCMS_API_KEY,
+      gql: {
+        clients: {
+          default: {
+            host: process.env.GRAPHCMS_ENDPOINT,
+            token: process.env.GRAPHCMS_API_KEY,
+          },
+        },
+      },
     },
     myPrivateToken: process.env.PRIVATE_TOKEN,
   },
@@ -16,14 +24,6 @@ export default defineNuxtConfig({
     apiKey: process.env.ALGOLIA_API_KEY,
     applicationId: process.env.ALGOLIA_APP_ID,
     recommend: true,
-  },
-  gql: {
-    clients: {
-      default: {
-        host: process.env.GRAPHCMS_ENDPOINT,
-        token: process.env.GRAPHCMS_API_KEY,
-      },
-    },
   },
   head: {
     htmlAttrs: {
