@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="pending">Loading ...</div>
+    <Loading v-if="pending" />
     <div v-else>
       <Head>
         <Title>{{ response.page.title }}</Title>

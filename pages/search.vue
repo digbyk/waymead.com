@@ -143,6 +143,8 @@ import aa from "search-insights";
 import { createInsightsMiddleware } from "instantsearch.js/es/middlewares";
 import { history } from "instantsearch.js/es/lib/routers";
 
+const indexName = "resources";
+const algolia = useAlgolia();
 aa("setUserToken", "test-user-321");
 const insightsMiddleware = createInsightsMiddleware({
   insightsClient: aa,
@@ -150,8 +152,6 @@ const insightsMiddleware = createInsightsMiddleware({
 const showFilters = () => {
   document.getElementById("filters").classList.toggle("hidden");
 };
-const indexName = "resources";
-const algolia = useAlgolia();
 const middlewares = [insightsMiddleware];
 const routing = {
   router: history(),
