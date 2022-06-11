@@ -1,15 +1,16 @@
 import { defineNuxtConfig } from "nuxt";
 
 export default defineNuxtConfig({
-  publicRuntimeConfig: {
-    graphcmsEndpoint: process.env.GRAPHCMS_ENDPOINT,
-    graphcmsApiKey: process.env.GRAPHCMS_API_KEY,
-  },
-  privateRuntimeConfig: {
+  runtimeConfig: {
+    public: {
+      graphcmsEndpoint: process.env.GRAPHCMS_ENDPOINT,
+      graphcmsApiKey: process.env.GRAPHCMS_API_KEY,
+    },
     myPrivateToken: process.env.PRIVATE_TOKEN,
   },
+
   modules: ["@vueuse/nuxt", "@nuxtjs/algolia"],
-  buildModules: ["nuxt-windicss", "@nuxtjs/google-fonts"],
+  buildModules: ["nuxt-windicss"],
   build: {},
   algolia: {
     apiKey: process.env.ALGOLIA_API_KEY,
