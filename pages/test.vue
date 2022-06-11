@@ -40,3 +40,10 @@ useHead({
   meta: [{ name: "description", content: "Testing" }],
 });
 </script>
+
+<style>
+section {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+</style>
