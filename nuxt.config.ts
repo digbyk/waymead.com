@@ -9,13 +9,21 @@ export default defineNuxtConfig({
     myPrivateToken: process.env.PRIVATE_TOKEN,
   },
 
-  modules: ["@vueuse/nuxt", "@nuxtjs/algolia"],
+  modules: ["@vueuse/nuxt", "@nuxtjs/algolia", "nuxt-graphql-client"],
   buildModules: ["nuxt-windicss"],
   build: {},
   algolia: {
     apiKey: process.env.ALGOLIA_API_KEY,
     applicationId: process.env.ALGOLIA_APP_ID,
     recommend: true,
+  },
+  gql: {
+    clients: {
+      default: {
+        host: process.env.GRAPHCMS_ENDPOINT,
+        token: process.env.GRAPHCMS_API_KEY,
+      },
+    },
   },
   head: {
     htmlAttrs: {
