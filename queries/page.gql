@@ -1,0 +1,10 @@
+query page($slug: String!) {
+  page(where: { slug: $slug }) {
+    id
+    title
+    summary
+    content {
+      html
+    }
+  }
+}
