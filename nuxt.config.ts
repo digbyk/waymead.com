@@ -1,37 +1,26 @@
 import { defineNuxtConfig } from "nuxt";
 
 export default defineNuxtConfig({
+  modules: ["@vueuse/nuxt", "@nuxtjs/algolia", "nuxt-graphql-client"],
+  buildModules: ["nuxt-windicss"],
+  build: {},
   runtimeConfig: {
     public: {
-      graphcmsEndpoint: process.env.GRAPHCMS_ENDPOINT,
-      graphcmsApiKey: process.env.GRAPHCMS_API_KEY,
+      gql: {
+        clients: {
+          default: {
+            host: process.env.GRAPHCMS_ENDPOINT,
+            token: process.env.GRAPHCMS_API_KEY,
+          },
+        },
+      },
     },
     myPrivateToken: process.env.PRIVATE_TOKEN,
   },
-
-  modules: ["@vueuse/nuxt", "@nuxtjs/algolia"],
-  buildModules: ["nuxt-windicss"],
-  build: {},
   algolia: {
     apiKey: process.env.ALGOLIA_API_KEY,
     applicationId: process.env.ALGOLIA_APP_ID,
     recommend: true,
-  },
-  head: {
-    htmlAttrs: {
-      lang: "en",
-    },
-    title: "waymead",
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        hid: "description",
-        name: "description",
-        content: "waymead.com",
-      },
-    ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon-196x196.png" }],
   },
   ssr: false,
   pwa: {

@@ -1,13 +1,27 @@
 <template>
-  <article class="w-full prose-lg" v-html="page.content.html"></article>
+  <div>
+    <Loading v-if="pending" />
+    <div v-else>
+      <Head>
+        <Title>{{ response.page.title }}</Title>
+        <Meta name="description" :content="response.page.summary" />
+      </Head>
+      <article
+        class="w-full prose-lg"
+        v-html="response.page.content.html"
+      ></article>
+    </div>
+  </div>
 </template>
 
 <script setup>
 const route = useRoute();
-const { $cmsClient } = useNuxtApp();
-const page = await $cmsClient.getPageBySlug(route.params.slug);
+
+const { data: response, pending } = await useAsyncData(route.params.slug, () =>
+  GqlPage({ slug: route.params.slug })
+);
 useHead({
-  title: page.title,
-  meta: [{ name: "description", content: page.summary }],
+  title: response?.page?.title,
+  meta: [{ name: "description", content: response?.page?.summary }],
 });
 </script>
