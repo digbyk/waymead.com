@@ -17,7 +17,6 @@
         This is the contents
       </SuperComponent>
     </section>
-    <section>{{ page }}</section>
   </div>
 </template>
 
@@ -31,8 +30,6 @@ const { data: data, pending } = useFetch("/api/hello");
 const reverse = () => {
   name.value = name.value.split("").reverse().join("");
 };
-const { page } = await useAsyncData("page", () => GqlPage({ slug: "about" }));
-console.log(page);
 useHead({
   title: name,
   meta: [{ name: "description", content: "Testing" }],
