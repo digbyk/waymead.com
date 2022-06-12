@@ -3,7 +3,7 @@
     <ul
       class="flex flex-row flex-grow w-full justify-between items-center p-0 m-0"
     >
-      <li class="text-2xl py-1 font-inter font-lightself-center">
+      <li class="text-2xl py-1 self-center">
         <NuxtLink to="/" class="text-dark-300 dark:text-light-300 no-underline"
           >WAYMEAD</NuxtLink
         >
@@ -40,13 +40,13 @@
       <li v-for="menuItem in menuItems" :key="1" class="" @click="hideMenu">
         <NuxtLink
           :to="menuItem.path"
-          class="flex my-3 md:mx-3 place-content-center no-underline text-dark-300 dark:text-light-300 hover:text-dark-900 dark:hover:text-light-100"
+          class="flex my-2 md:ml-4 place-content-center no-underline text-dark-300 dark:text-light-300 hover:text-dark-900 dark:hover:text-light-100"
           >{{ menuItem.name }}</NuxtLink
         >
       </li>
       <li class="">
         <div
-          class="i-carbon-sun dark:i-carbon-moon my-3 md:mx-3 text-xl cursor-pointer"
+          class="i-ic-round-light-mode dark:i-ic-round-dark-mode my-2 md:ml-4 text-xl cursor-pointer"
           @click="toggleDark()"
         />
       </li>

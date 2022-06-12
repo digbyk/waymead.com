@@ -7,7 +7,7 @@
         <Meta name="description" :content="response.page.summary" />
       </Head>
       <article
-        class="w-full prose-lg"
+        class="w-full prose dark:prose-invert text-xl max-w-none"
         v-html="response.page.content.html"
       ></article>
     </div>

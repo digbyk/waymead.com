@@ -13,25 +13,20 @@ export default defineConfig({
     presetUno(), // required
     presetTypography(),
     presetIcons({
-      /* options */
+      extraProperties: {
+        display: "inline-block",
+        "vertical-align": "middle",
+      },
     }),
     presetWebFonts({
       provider: "google", // default provider
       fonts: {
-        // these will extend the default theme
         sans: "Inter",
-        mono: ["Fira Code", "Fira Mono:400,700"],
-        // custom ones
-        lobster: "Lobster",
         inter: [
           {
             name: "Inter",
             weights: ["100", "300", "500"],
             italic: true,
-          },
-          {
-            name: "sans-serif",
-            provider: "none",
           },
         ],
       },
