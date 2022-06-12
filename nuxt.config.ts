@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     "@nuxtjs/algolia",
     "nuxt-graphql-client",
     "@unocss/nuxt",
+    "@nuxt/content",
   ],
   buildModules: [],
   build: {},
