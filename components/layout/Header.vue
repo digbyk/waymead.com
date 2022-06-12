@@ -74,6 +74,10 @@ const menuItems = [
     path: "/page/about",
   },
   {
+    name: "Content",
+    path: "/aboutus",
+  },
+  {
     name: "Search",
     path: "/search",
   },

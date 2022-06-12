@@ -2,7 +2,7 @@
   <article
     class="w-full prose dark:prose-invert max-w-none h-full flex place-items-center place-content-center"
   >
-    <ContentDoc>
+    <ContentDoc class="w-full">
       <template #not-found>
         <div
           class="flex flex-col place-content-center place-items-center h-full"
