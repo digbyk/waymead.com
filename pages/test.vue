@@ -17,6 +17,7 @@
         This is the contents
       </SuperComponent>
     </section>
+    <div class="i-mdi-alarm text-orange-400" />
   </div>
 </template>
 
