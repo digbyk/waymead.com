@@ -1,8 +1,12 @@
 <template>
   <nav class="w-full flex flex-col md:flex-row justify-between">
-    <ul class="flex flex-row flex-grow w-full justify-between items-center">
-      <li class="text-2xl py-1 font-inter font-lightself-center">
-        <NuxtLink to="/">WAYMEAD</NuxtLink>
+    <ul
+      class="flex flex-row flex-grow w-full justify-between items-center p-0 m-0"
+    >
+      <li class="text-2xl py-1 self-center">
+        <NuxtLink to="/" class="text-dark-300 dark:text-light-300 no-underline"
+          >WAYMEAD</NuxtLink
+        >
       </li>
       <li class="block md:hidden">
         <input
@@ -30,24 +34,21 @@
     </ul>
     <ul
       id="menu"
-      class="md:flex flex-col w-full md:flex-row md:justify-end transition-all items-center"
+      class="md:flex flex-col w-full md:flex-row md:justify-end transition-all items-center p-0 m-0"
       :class="showMenu ? 'flex' : 'hidden'"
     >
       <li v-for="menuItem in menuItems" :key="1" class="" @click="hideMenu">
         <NuxtLink
           :to="menuItem.path"
-          class="w-full py-1 md:px-3 flex place-content-center hover:text-dark-900 dark:hover:text-light-100"
+          class="flex my-2 md:ml-4 place-content-center no-underline text-dark-300 dark:text-light-300 hover:text-dark-900 dark:hover:text-light-100"
           >{{ menuItem.name }}</NuxtLink
         >
       </li>
-      <li>
-        <button
-          class="w-full py-1 md:pl-3 flex place-content-center hover:text-dark-900 dark:hover:text-light-100"
+      <li class="">
+        <div
+          class="i-ic-round-light-mode dark:i-ic-round-dark-mode my-2 md:ml-4 text-xl cursor-pointer"
           @click="toggleDark()"
-        >
-          <span v-if="isDark" class="material-icons-outlined">dark_mode</span>
-          <span v-if="!isDark" class="material-icons-outlined">light_mode</span>
-        </button>
+        />
       </li>
     </ul>
   </nav>

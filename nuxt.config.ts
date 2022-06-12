@@ -1,8 +1,13 @@
 import { defineNuxtConfig } from "nuxt";
 
 export default defineNuxtConfig({
-  modules: ["@vueuse/nuxt", "@nuxtjs/algolia", "nuxt-graphql-client"],
-  buildModules: ["nuxt-windicss"],
+  modules: [
+    "@vueuse/nuxt",
+    "@nuxtjs/algolia",
+    "nuxt-graphql-client",
+    "@unocss/nuxt",
+  ],
+  buildModules: [],
   build: {},
   runtimeConfig: {
     public: {
@@ -21,6 +26,16 @@ export default defineNuxtConfig({
     apiKey: process.env.ALGOLIA_API_KEY,
     applicationId: process.env.ALGOLIA_APP_ID,
     recommend: true,
+  },
+  unocss: {
+    // presets
+    uno: true, // enabled `@unocss/preset-uno`
+    icons: true, // enabled `@unocss/preset-icons`
+    attributify: false, // enabled `@unocss/preset-attributify`,
+
+    // core options
+    shortcuts: [],
+    rules: [],
   },
   ssr: false,
   pwa: {
