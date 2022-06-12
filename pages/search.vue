@@ -24,11 +24,18 @@
         <div class="w-full md:w-1/4 p-2">
           <div :open="showFilters" class="">
             <div
-              @click="showFilters()"
+              @click="toggleFilters()"
               class="text-xl flex flex-row align-center justify-between"
             >
               <span>Filters</span>
-              <span class="material-icons">expand_more</span>
+              <div
+                v-if="!showFilters"
+                class="i-ic-keyboard-arrow-down md:hidden my-2 md:ml-4 text-xl cursor-pointer"
+              />
+              <div
+                v-if="showFilters"
+                class="i-ic-keyboard-arrow-up md:hidden my-2 md:ml-4 text-xl cursor-pointer"
+              />
             </div>
             <div id="filters" class="hidden md:flex flex-col">
               <h3 class="text-xl">Type</h3>
@@ -127,6 +134,7 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import {
   AisInstantSearch,
   AisSearchBox,
@@ -149,8 +157,10 @@ aa("setUserToken", "test-user-321");
 const insightsMiddleware = createInsightsMiddleware({
   insightsClient: aa,
 });
-const showFilters = () => {
+const showFilters = ref(false);
+const toggleFilters = () => {
   document.getElementById("filters").classList.toggle("hidden");
+  showFilters.value = !showFilters.value;
 };
 const middlewares = [insightsMiddleware];
 const routing = {
