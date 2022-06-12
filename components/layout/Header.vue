@@ -4,8 +4,14 @@
       class="flex flex-row flex-grow w-full justify-between items-center p-0 m-0"
     >
       <li class="text-2xl py-1 self-center">
-        <NuxtLink to="/" class="text-dark-300 dark:text-light-300 no-underline"
-          >WAYMEAD</NuxtLink
+        <NuxtLink
+          to="/"
+          class="flex flex-row text-dark-300 dark:text-light-300 no-underline flex flex-row items-center"
+          ><img
+            src="/logo.svg"
+            alt="Waymead logo"
+            class="h-8 w-8 mr-2"
+          />WAYMEAD</NuxtLink
         >
       </li>
       <li class="block md:hidden">
