@@ -5,8 +5,6 @@
 </template>
 
 <script setup>
-import { useFavicon } from "@vueuse/core";
-const icon = useFavicon("favicon-196.png");
 useHead({
   titleTemplate: "%s | Waymead",
   htmlAttrs: {
