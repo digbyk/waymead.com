@@ -56,6 +56,28 @@
           @click="toggleDark()"
         />
       </li>
+      <li v-if="!user">
+        <span
+          class="flex my-2 md:ml-4 place-content-center no-underline text-dark-300 dark:text-light-300 hover:text-dark-900 dark:hover:text-light-100 cursor-pointer"
+          @click="signInWithEmail()"
+          >Login</span
+        >
+      </li>
+      <li v-if="user">
+        <span
+          class="flex my-2 md:ml-4 place-content-center no-underline text-dark-300 dark:text-light-300 hover:text-dark-900 dark:hover:text-light-100 cursor-pointer"
+          @click="signOut()"
+          >Logout</span
+        >
+      </li>
+      <li
+        v-if="user"
+        class="place-content-center no-underline text-dark-300 dark:text-light-300 hover:text-dark-900 dark:hover:text-light-100"
+      >
+        <div
+          class="i-ic-round-account-circle my-2 md:ml-4 text-xl cursor-pointer"
+        ></div>
+      </li>
     </ul>
   </nav>
 </template>
@@ -63,6 +85,8 @@
 <script setup>
 import { ref } from "vue";
 import { useDark, useToggle } from "@vueuse/core";
+const client = useSupabaseClient();
+const user = useSupabaseUser(client);
 
 const menuItems = [
   {
@@ -95,6 +119,16 @@ const hideMenu = () => {
 };
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
+
+async function signInWithEmail() {
+  const { user, error } = await client.auth.signIn({
+    email: "digby@digby.net",
+  });
+}
+
+async function signOut() {
+  const { error } = await client.auth.signOut();
+}
 </script>
 
 <style>
