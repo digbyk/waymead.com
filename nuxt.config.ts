@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     "nuxt-graphql-client",
     "@unocss/nuxt",
     "@nuxt/content",
+    "@nuxtjs/supabase",
   ],
   buildModules: [],
   build: {},
