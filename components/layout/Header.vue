@@ -90,10 +90,6 @@ const user = useSupabaseUser(client);
 
 const menuItems = [
   {
-    name: "Home",
-    path: "/",
-  },
-  {
     name: "About",
     path: "/page/about",
   },
