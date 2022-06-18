@@ -47,14 +47,9 @@
         <NuxtLink
           :to="menuItem.path"
           class="flex my-2 md:ml-4 place-content-center no-underline text-dark-300 dark:text-light-300 hover:text-dark-900 dark:hover:text-light-100"
-          >{{ menuItem.name }}</NuxtLink
         >
-      </li>
-      <li class="">
-        <div
-          class="i-ic-round-light-mode dark:i-ic-round-dark-mode my-2 md:ml-4 text-xl cursor-pointer"
-          @click="toggleDark()"
-        />
+          {{ menuItem.name }}
+        </NuxtLink>
       </li>
       <li v-if="!user">
         <span
@@ -74,9 +69,18 @@
         v-if="user"
         class="place-content-center no-underline text-dark-300 dark:text-light-300 hover:text-dark-900 dark:hover:text-light-100"
       >
+        <NuxtLink
+          to="/profile"
+          class="flex my-2 md:ml-4 place-content-center no-underline text-dark-300 dark:text-light-300 hover:text-dark-900 dark:hover:text-light-100"
+        >
+          <div class="i-ic-round-account-circle text-xl cursor-pointer"></div>
+        </NuxtLink>
+      </li>
+      <li class="">
         <div
-          class="i-ic-round-account-circle my-2 md:ml-4 text-xl cursor-pointer"
-        ></div>
+          class="i-ic-round-light-mode dark:i-ic-round-dark-mode my-2 md:ml-4 text-xl cursor-pointer"
+          @click="toggleDark()"
+        />
       </li>
     </ul>
   </nav>
