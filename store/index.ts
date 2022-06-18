@@ -1,6 +1,6 @@
 import { reactive } from "vue";
 
 export const store = reactive({
-  name: "Digby",
+  name: "Basil Brush",
   count: 0,
 });
