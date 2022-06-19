@@ -51,12 +51,13 @@
           {{ menuItem.name }}
         </NuxtLink>
       </li>
-      <li v-if="!user">
-        <span
-          class="flex my-2 md:ml-4 place-content-center no-underline text-dark-300 dark:text-light-300 hover:text-dark-900 dark:hover:text-light-100 cursor-pointer"
-          @click="signInWithEmail()"
-          >Login</span
+      <li v-if="!user" class="" @click="hideMenu">
+        <NuxtLink
+          to="/login"
+          class="flex my-2 md:ml-4 place-content-center no-underline text-dark-300 dark:text-light-300 hover:text-dark-900 dark:hover:text-light-100"
         >
+          Login
+        </NuxtLink>
       </li>
       <li v-if="user">
         <span
