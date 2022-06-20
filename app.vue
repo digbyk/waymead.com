@@ -5,6 +5,8 @@
 </template>
 
 <script setup>
+import "@formkit/themes/genesis";
+
 useHead({
   titleTemplate: "%s | Waymead",
   htmlAttrs: {
@@ -19,6 +21,7 @@ useHead({
 
 <style>
 @import "@unocss/reset/tailwind.css";
+
 html,
 body,
 #__nuxt {

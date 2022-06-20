@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     "@unocss/nuxt",
     "@nuxt/content",
     "@nuxtjs/supabase",
+    "@formkit/nuxt",
   ],
   buildModules: [],
   build: {},
