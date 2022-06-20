@@ -1,43 +1,47 @@
 <template>
-  <form
-    class="flex flex-col w-screen-sm place-content-center mx-auto"
-    @submit="signInWithEmail"
-  >
-    <lebel for="email" class="text-lg text-stone-700 dark:text-stone-300"
-      >Email</lebel
+  <div class="max-w-sm mx-auto prose dark:prose-invert">
+    <h2>Login</h2>
+    <p>
+      Please enter your email address and click login. We'll send you a magic
+      link - no passwords!!
+    </p>
+    <FormKit
+      type="form"
+      name="loginForm"
+      v-model="formData"
+      :form-class="submitted ? 'hidden' : 'block'"
+      submit-label="Login"
+      @submit="signInWithEmail"
     >
-    <input
-      id="email"
-      type="email"
-      name="email"
-      v-model="email"
-      required
-      class="text-black text-xl p-1 my-2"
-    />
-    <input
-      type="submit"
-      value="Login"
-      class="mt-2 border-2 border-black text-black dark:text-white text-xl"
-      :disabled="formDisabled"
-    />
-  </form>
+      <FormKit
+        type="email"
+        name="email"
+        placeholder="name@domain.com"
+        label="Email"
+      />
+    </FormKit>
+    <div v-if="submitted" class="prose dark:prose-invert">
+      <h2>Magic link sent</h2>
+      <p>We have sent a magic link to your email address.</p>
+      <p>Please click on it to log in.</p>
+    </div>
+  </div>
 </template>
 
 <script setup>
 const client = useSupabaseClient();
 
+const formData = ref({});
+const submitted = ref(false);
 const email = ref("");
 const formDisabled = ref(true);
 
 const signInWithEmail = async (event) => {
-  event.preventDefault();
-  const { user, error } = await client.auth.signIn(
-    {
-      email: email.value,
-    },
-    { redirectTo: window.location.origin }
-  );
-  console.log(user);
+  //  event.preventDefault();
+  const { user, error } = await client.auth.signIn(formData.value, {
+    redirectTo: window.location.origin,
+  });
+  submitted.value = true;
 };
 useHead({
   title: "Login",
