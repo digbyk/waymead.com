@@ -1,5 +1,10 @@
 <template>
-  <div class="max-w-sm mx-auto">
+  <div class="max-w-sm mx-auto prose dark:prose-invert">
+    <h2>Login</h2>
+    <p>
+      Please enter your email address and click login. We'll send you a magic
+      link - no passwords!!
+    </p>
     <FormKit
       type="form"
       name="loginForm"
