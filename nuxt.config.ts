@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxtjs/supabase",
     "@formkit/nuxt",
+    "@kevinmarrec/nuxt-pwa",
   ],
   buildModules: [],
   build: {},
@@ -46,15 +47,16 @@ export default defineNuxtConfig({
       fileName: "android-chrome-512x512.png",
     },
     meta: {
-      title: "waymead",
+      title: "Waymead",
       author: "digby",
     },
     manifest: {
       lang: "en",
-      name: "waymead",
-      short_name: "waymead",
+      name: "Waymead",
+      short_name: "Waymead",
+      orientation: "portrait",
       display: "standalone",
-      theme_color: "#F11010",
+      theme_color: "#376B9C",
       icons: [
         {
           src: "manifest-icon-192.maskable.png",
@@ -83,7 +85,7 @@ export default defineNuxtConfig({
       ],
     },
     workbox: {
-      dev: true, // or use a global variable to track the current NODE_ENV, etc to determine dev mode
+      enabled: true,
     },
   },
 });

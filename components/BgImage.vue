@@ -10,7 +10,7 @@
       class="w-full h-full bg-cover bg-no-repeat bg-center flex place-content-center rounded-t-lg md:rounded-tr-none p-4"
       :style="{
         background: 'rgba(255, 255, 255, 0.6)',
-        'backdrop-filter': 'blur(10px)',
+        'backdrop-filter': 'blur(20px) saturate(150%)',
       }"
     >
       <img
