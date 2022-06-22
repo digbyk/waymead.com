@@ -121,15 +121,6 @@ const hideMenu = () => {
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
-async function signInWithEmail() {
-  const { user, error } = await client.auth.signIn(
-    {
-      email: "digby@digby.net",
-    },
-    { redirectTo: window.location.origin }
-  );
-}
-
 async function signOut() {
   const { error } = await client.auth.signOut();
 }
