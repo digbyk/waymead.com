@@ -44,7 +44,7 @@ export default defineNuxtConfig({
   ssr: false,
   pwa: {
     icon: {
-      fileName: "android-chrome-512x512.png",
+      fileName: "favicon-196.png",
     },
     meta: {
       title: "Waymead",
