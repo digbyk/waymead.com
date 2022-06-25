@@ -58,6 +58,7 @@ export default defineNuxtConfig({
       orientation: "portrait",
       display: "standalone",
       theme_color: "#376B9C",
+      background_color: "#ffffff",
       start_url: "/",
       id: "/",
     },
@@ -67,6 +68,7 @@ export default defineNuxtConfig({
       enabled: true,
       cleanupOutdatedCaches: true,
       cachingExtensions: "~/helpers/cache/browser.js",
+      swURL: "/sw.js",
     },
   },
 });
