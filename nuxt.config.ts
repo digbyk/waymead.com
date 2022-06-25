@@ -44,7 +44,7 @@ export default defineNuxtConfig({
   ssr: false,
   pwa: {
     icon: {
-      fileName: "favicon-196.png",
+      fileName: "logo-512x512.png",
     },
     meta: {
       title: "Waymead",
