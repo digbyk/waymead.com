@@ -44,11 +44,12 @@ export default defineNuxtConfig({
   ssr: false,
   pwa: {
     icon: {
-      fileName: "favicon-196.png",
+      fileName: "logo-512x512.png",
     },
     meta: {
       title: "Waymead",
-      author: "digby",
+      author: "digby@digby.net",
+      description: "Waymead PWA",
     },
     manifest: {
       lang: "en",
@@ -57,35 +58,17 @@ export default defineNuxtConfig({
       orientation: "portrait",
       display: "standalone",
       theme_color: "#376B9C",
-      icons: [
-        {
-          src: "manifest-icon-192.maskable.png",
-          sizes: "192x192",
-          type: "image/png",
-          purpose: "any",
-        },
-        {
-          src: "manifest-icon-192.maskable.png",
-          sizes: "192x192",
-          type: "image/png",
-          purpose: "maskable",
-        },
-        {
-          src: "manifest-icon-512.maskable.png",
-          sizes: "512x512",
-          type: "image/png",
-          purpose: "any",
-        },
-        {
-          src: "manifest-icon-512.maskable.png",
-          sizes: "512x512",
-          type: "image/png",
-          purpose: "maskable",
-        },
-      ],
+      background_color: "#ffffff",
+      start_url: "/",
+      id: "/",
     },
     workbox: {
+      workboxURL:
+        "https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js",
       enabled: true,
+      cleanupOutdatedCaches: true,
+      cachingExtensions: "~/helpers/cache/browser.js",
+      swURL: "/sw.js",
     },
   },
 });
