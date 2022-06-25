@@ -42,27 +42,4 @@ export default defineNuxtConfig({
     rules: [],
   },
   ssr: false,
-  pwa: {
-    icon: {
-      fileName: "logo-512x512.png",
-    },
-    meta: {
-      title: "Waymead",
-      author: "digby@digby.net",
-    },
-    manifest: {
-      lang: "en",
-      name: "Waymead",
-      short_name: "Waymead",
-      orientation: "portrait",
-      display: "standalone",
-      theme_color: "#376B9C",
-      background_color: "#ffffff",
-      start_url: "/",
-      id: "/",
-    },
-    workbox: {
-      enabled: true,
-    },
-  },
 });
