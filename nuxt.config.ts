@@ -57,6 +57,8 @@ export default defineNuxtConfig({
       orientation: "portrait",
       display: "standalone",
       theme_color: "#376B9C",
+      start_url: "/",
+      id: "/",
     },
     workbox: {
       enabled: true,
