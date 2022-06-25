@@ -48,7 +48,7 @@ export default defineNuxtConfig({
     },
     meta: {
       title: "Waymead",
-      author: "digby",
+      author: "digby@digby.net",
     },
     manifest: {
       lang: "en",
@@ -57,32 +57,6 @@ export default defineNuxtConfig({
       orientation: "portrait",
       display: "standalone",
       theme_color: "#376B9C",
-      icons: [
-        {
-          src: "manifest-icon-192.maskable.png",
-          sizes: "192x192",
-          type: "image/png",
-          purpose: "any",
-        },
-        {
-          src: "manifest-icon-192.maskable.png",
-          sizes: "192x192",
-          type: "image/png",
-          purpose: "maskable",
-        },
-        {
-          src: "manifest-icon-512.maskable.png",
-          sizes: "512x512",
-          type: "image/png",
-          purpose: "any",
-        },
-        {
-          src: "manifest-icon-512.maskable.png",
-          sizes: "512x512",
-          type: "image/png",
-          purpose: "maskable",
-        },
-      ],
     },
     workbox: {
       enabled: true,
