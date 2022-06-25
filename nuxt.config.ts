@@ -44,7 +44,7 @@ export default defineNuxtConfig({
   ssr: false,
   pwa: {
     icon: {
-      fileName: "logo-512x512.png",
+      fileName: "icon.png",
     },
     meta: {
       title: "Waymead",
@@ -57,9 +57,9 @@ export default defineNuxtConfig({
       orientation: "portrait",
       display: "standalone",
       theme_color: "#376B9C",
-      background_color: "#ffffff",
-      start_url: "/",
-      id: "/",
+      background_color: "#000000",
+      start_url: "/?standalone=true",
+      id: "/?standalone=true",
     },
     workbox: {
       enabled: true,
