@@ -1,4 +1,8 @@
 {
+  "name": "waymead.com",
+  "description": "Waymead.com website",
+  "version": "0.9.1",
+  "author": "digby@digby.net",
   "private": true,
   "scripts": {
     "build": "nuxt build",

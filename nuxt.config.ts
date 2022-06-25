@@ -49,7 +49,6 @@ export default defineNuxtConfig({
     meta: {
       title: "Waymead",
       author: "digby@digby.net",
-      description: "Waymead PWA",
     },
     manifest: {
       lang: "en",
