@@ -49,6 +49,7 @@ export default defineNuxtConfig({
     meta: {
       title: "Waymead",
       author: "digby@digby.net",
+      description: "Waymead PWA",
     },
     manifest: {
       lang: "en",
@@ -61,7 +62,11 @@ export default defineNuxtConfig({
       id: "/",
     },
     workbox: {
+      workboxURL:
+        "https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js",
       enabled: true,
+      cleanupOutdatedCaches: true,
+      cachingExtensions: "~/helpers/cache/browser.js",
     },
   },
 });
