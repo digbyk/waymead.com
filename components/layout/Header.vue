@@ -8,7 +8,7 @@
           to="/"
           class="flex flex-row text-dark-300 dark:text-light-300 no-underline flex flex-row items-center"
           ><img
-            src="/logo.svg"
+            src="/icon.svg"
             alt="Waymead logo"
             class="h-8 w-8 mr-2"
           />WAYMEAD</NuxtLink
