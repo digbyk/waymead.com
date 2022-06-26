@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     "@formkit/nuxt",
     "@kevinmarrec/nuxt-pwa",
   ],
-  plugins: ["~/plugins/sw.client.js"],
   buildModules: [],
   build: {},
   runtimeConfig: {
