@@ -62,7 +62,7 @@ export default defineNuxtConfig({
       id: "/?standalone=true",
     },
     workbox: {
-      enabled: true,
+      debug: true,
     },
   },
 });
