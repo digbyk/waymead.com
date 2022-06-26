@@ -61,6 +61,8 @@ export default defineNuxtConfig({
       start_url: "/?standalone=true",
       id: "/?standalone=true",
     },
-    workbox: false,
+    workbox: {
+      debug: true,
+    },
   },
 });
