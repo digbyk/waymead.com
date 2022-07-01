@@ -21,6 +21,7 @@ useHead({
 
 <style>
 @import "@unocss/reset/tailwind.css";
+@import "daisyui/dist/full.css";
 
 html,
 body,

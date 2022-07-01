@@ -30,6 +30,7 @@ export default defineNuxtConfig({
     apiKey: process.env.ALGOLIA_API_KEY,
     applicationId: process.env.ALGOLIA_APP_ID,
     recommend: true,
+    indexer: {},
   },
   unocss: {
     // presets
@@ -47,22 +48,20 @@ export default defineNuxtConfig({
       fileName: "icon.png",
     },
     meta: {
-      title: "Waymead",
       author: "digby@digby.net",
     },
     manifest: {
       lang: "en",
       name: "Waymead",
       short_name: "Waymead",
-      orientation: "portrait",
       display: "standalone",
       theme_color: "#376B9C",
       background_color: "#000000",
       start_url: "/?standalone=true",
-      id: "/?standalone=true",
+      //  id: "/?standalone=true",
     },
     workbox: {
-      debug: true,
+      //  debug: true,
     },
   },
 });
