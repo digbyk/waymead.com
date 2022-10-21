@@ -7,6 +7,7 @@
     >
       <Header />
     </header>
+    <NuxtLoadingIndicator />
     <main class="container w-screen-lg flex-auto m-auto py-2 md:py-8">
       <slot />
     </main>

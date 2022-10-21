@@ -152,7 +152,7 @@ import { createInsightsMiddleware } from "instantsearch.js/es/middlewares";
 import { history } from "instantsearch.js/es/lib/routers";
 
 const indexName = "resources";
-const algolia = useAlgolia();
+const algolia = useAlgoliaRef();
 aa("setUserToken", "test-user-321");
 const insightsMiddleware = createInsightsMiddleware({
   insightsClient: aa,

@@ -79,7 +79,7 @@ aa("setUserToken", "test-user-321");
 const runtimeConfig = useRuntimeConfig();
 
 const route = useRoute();
-const algolia = useAlgolia();
+const algolia = useAlgoliaRef();
 //const { result, get } = useAlgoliaRecommend();
 const queryID = route.query.queryID;
 
