@@ -1,7 +1,7 @@
 {
   "name": "waymead.com",
   "description": "Waymead.com website",
-  "version": "0.9.1",
+  "version": "1.0.1",
   "author": "digby@digby.net",
   "private": true,
   "scripts": {
@@ -24,9 +24,9 @@
     "@unocss/preset-typography": "^0.38.2",
     "@unocss/preset-web-fonts": "^0.38.2",
     "@unocss/reset": "^0.38.2",
-    "@vueuse/core": "^8.6.0",
-    "@vueuse/nuxt": "^8.6.0",
-    "nuxt": "npm:nuxt3@latest",
+    "@vueuse/core": "^9.3.1",
+    "@vueuse/nuxt": "^9.3.1",
+    "nuxt": "^3.0.0-rc.12",
     "vitest": "^0.15.1"
   },
   "dependencies": {
@@ -42,8 +42,7 @@
     "graphql": "^16.5.0",
     "graphql-request": "^4.2.0",
     "instantsearch.css": "^7.4.5",
-    "nuxt-graphql-client": "^0.0.32",
-    "search-insights": "^2.2.1",
-    "vue": "^3.2.42"
+    "nuxt-graphql-client": "^0.2.5",
+    "search-insights": "^2.2.1"
   }
 }
